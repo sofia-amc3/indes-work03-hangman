@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "hangmanGame_t3_indes/1.0.0": {
+        "runtime": {
+          "hangmanGame_t3_indes.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "hangmanGame_t3_indes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
