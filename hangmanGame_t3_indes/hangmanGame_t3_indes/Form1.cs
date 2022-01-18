@@ -17,7 +17,7 @@ namespace hangmanGame_t3_indes
             InitializeComponent();
         }
 
-        // Welcome Screen -------------------------------------------------------------------------------------------------------------------------------------
+        // Welcome Screen --------------------------------------------------------------------------------------------------------------------------------------
         private void welcome_creditsBtn_Click(object sender, EventArgs e)
         {
             menu.SelectedIndex = 1;
@@ -33,7 +33,7 @@ namespace hangmanGame_t3_indes
             menu.SelectedIndex = 3;
         }
 
-        // Rules Screen ---------------------------------------------------------------------------------------------------------------------------------------
+        // Rules Screen ----------------------------------------------------------------------------------------------------------------------------------------
         private void rules_backBtn_Click(object sender, EventArgs e)
         {
             menu.SelectedIndex = 0;
@@ -43,6 +43,37 @@ namespace hangmanGame_t3_indes
         private void credits_backBtn_Click(object sender, EventArgs e)
         {
             menu.SelectedIndex = 0;
+        }
+
+        // Enter Name Screen ------------------------------------------------------------------------------------------------------------------------------------
+        private void enterName_playBtn_Click(object sender, EventArgs e)
+        {
+            menu.SelectedIndex = 4;
+        }
+
+        private void enterName_backBtn_Click(object sender, EventArgs e)
+        {
+            menu.SelectedIndex = 0;
+        }
+
+        private void enterName_input_TextChanged(object sender, EventArgs e)
+        {
+            // Enter Player Name Input
+        }
+
+        private void enterName_radioBtn1_CheckedChanged(object sender, EventArgs e)
+        {
+            // 5 levels
+        }
+
+        private void enterName_radioBtn2_CheckedChanged(object sender, EventArgs e)
+        {
+            // 10 levels
+        }
+
+        private void enterName_radioBtn3_CheckedChanged(object sender, EventArgs e)
+        {
+            // 15 levels
         }
     }
 }

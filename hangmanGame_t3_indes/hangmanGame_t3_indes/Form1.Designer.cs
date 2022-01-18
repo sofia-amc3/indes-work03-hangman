@@ -52,6 +52,16 @@ namespace hangmanGame_t3_indes
             this.enterName = new System.Windows.Forms.TabPage();
             this.playArea = new System.Windows.Forms.TabPage();
             this.highScores = new System.Windows.Forms.TabPage();
+            this.enterName_title = new System.Windows.Forms.Label();
+            this.enterName_gameLogo = new System.Windows.Forms.PictureBox();
+            this.enterName_backBtn = new System.Windows.Forms.Button();
+            this.enterName_playBtn = new System.Windows.Forms.Button();
+            this.enterName_nameLabel = new System.Windows.Forms.Label();
+            this.enterName_input = new System.Windows.Forms.TextBox();
+            this.enterName_levelsLabel = new System.Windows.Forms.Label();
+            this.enterName_radioBtn1 = new System.Windows.Forms.RadioButton();
+            this.enterName_radioBtn2 = new System.Windows.Forms.RadioButton();
+            this.enterName_radioBtn3 = new System.Windows.Forms.RadioButton();
             this.menu.SuspendLayout();
             this.welcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.welcome_gameLogo)).BeginInit();
@@ -61,6 +71,8 @@ namespace hangmanGame_t3_indes
             this.rules.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rules_gameLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rules_img)).BeginInit();
+            this.enterName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enterName_gameLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -291,6 +303,16 @@ namespace hangmanGame_t3_indes
             // enterName
             // 
             this.enterName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(36)))), ((int)(((byte)(68)))));
+            this.enterName.Controls.Add(this.enterName_radioBtn3);
+            this.enterName.Controls.Add(this.enterName_radioBtn2);
+            this.enterName.Controls.Add(this.enterName_radioBtn1);
+            this.enterName.Controls.Add(this.enterName_levelsLabel);
+            this.enterName.Controls.Add(this.enterName_input);
+            this.enterName.Controls.Add(this.enterName_nameLabel);
+            this.enterName.Controls.Add(this.enterName_playBtn);
+            this.enterName.Controls.Add(this.enterName_title);
+            this.enterName.Controls.Add(this.enterName_gameLogo);
+            this.enterName.Controls.Add(this.enterName_backBtn);
             this.enterName.ForeColor = System.Drawing.Color.White;
             this.enterName.Location = new System.Drawing.Point(4, 25);
             this.enterName.Name = "enterName";
@@ -318,6 +340,121 @@ namespace hangmanGame_t3_indes
             this.highScores.TabIndex = 5;
             this.highScores.Text = "highScores";
             // 
+            // enterName_title
+            // 
+            this.enterName_title.AutoSize = true;
+            this.enterName_title.Font = new System.Drawing.Font("Montserrat", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.enterName_title.Location = new System.Drawing.Point(135, 37);
+            this.enterName_title.Name = "enterName_title";
+            this.enterName_title.Size = new System.Drawing.Size(120, 50);
+            this.enterName_title.TabIndex = 10;
+            this.enterName_title.Text = "PLAY";
+            // 
+            // enterName_gameLogo
+            // 
+            this.enterName_gameLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("enterName_gameLogo.BackgroundImage")));
+            this.enterName_gameLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.enterName_gameLogo.Location = new System.Drawing.Point(56, 1);
+            this.enterName_gameLogo.Name = "enterName_gameLogo";
+            this.enterName_gameLogo.Size = new System.Drawing.Size(64, 106);
+            this.enterName_gameLogo.TabIndex = 9;
+            this.enterName_gameLogo.TabStop = false;
+            // 
+            // enterName_backBtn
+            // 
+            this.enterName_backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.enterName_backBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.enterName_backBtn.Location = new System.Drawing.Point(469, 603);
+            this.enterName_backBtn.Name = "enterName_backBtn";
+            this.enterName_backBtn.Size = new System.Drawing.Size(156, 56);
+            this.enterName_backBtn.TabIndex = 8;
+            this.enterName_backBtn.Text = "BACK";
+            this.enterName_backBtn.UseVisualStyleBackColor = true;
+            this.enterName_backBtn.Click += new System.EventHandler(this.enterName_backBtn_Click);
+            // 
+            // enterName_playBtn
+            // 
+            this.enterName_playBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.enterName_playBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.enterName_playBtn.Location = new System.Drawing.Point(643, 603);
+            this.enterName_playBtn.Name = "enterName_playBtn";
+            this.enterName_playBtn.Size = new System.Drawing.Size(156, 56);
+            this.enterName_playBtn.TabIndex = 11;
+            this.enterName_playBtn.Text = "PLAY";
+            this.enterName_playBtn.UseVisualStyleBackColor = true;
+            this.enterName_playBtn.Click += new System.EventHandler(this.enterName_playBtn_Click);
+            // 
+            // enterName_nameLabel
+            // 
+            this.enterName_nameLabel.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.enterName_nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+            this.enterName_nameLabel.Location = new System.Drawing.Point(469, 222);
+            this.enterName_nameLabel.Name = "enterName_nameLabel";
+            this.enterName_nameLabel.Size = new System.Drawing.Size(330, 33);
+            this.enterName_nameLabel.TabIndex = 12;
+            this.enterName_nameLabel.Text = "Please enter your player name:";
+            this.enterName_nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // enterName_input
+            // 
+            this.enterName_input.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.enterName_input.Location = new System.Drawing.Point(469, 278);
+            this.enterName_input.MinimumSize = new System.Drawing.Size(0, 40);
+            this.enterName_input.Name = "enterName_input";
+            this.enterName_input.Size = new System.Drawing.Size(330, 40);
+            this.enterName_input.TabIndex = 13;
+            this.enterName_input.TextChanged += new System.EventHandler(this.enterName_input_TextChanged);
+            // 
+            // enterName_levelsLabel
+            // 
+            this.enterName_levelsLabel.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.enterName_levelsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+            this.enterName_levelsLabel.Location = new System.Drawing.Point(469, 372);
+            this.enterName_levelsLabel.Name = "enterName_levelsLabel";
+            this.enterName_levelsLabel.Size = new System.Drawing.Size(336, 33);
+            this.enterName_levelsLabel.TabIndex = 14;
+            this.enterName_levelsLabel.Text = "Number of Levels:";
+            this.enterName_levelsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // enterName_radioBtn1
+            // 
+            this.enterName_radioBtn1.AutoSize = true;
+            this.enterName_radioBtn1.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.enterName_radioBtn1.Location = new System.Drawing.Point(545, 431);
+            this.enterName_radioBtn1.Name = "enterName_radioBtn1";
+            this.enterName_radioBtn1.Size = new System.Drawing.Size(41, 31);
+            this.enterName_radioBtn1.TabIndex = 15;
+            this.enterName_radioBtn1.TabStop = true;
+            this.enterName_radioBtn1.Text = "5";
+            this.enterName_radioBtn1.UseVisualStyleBackColor = true;
+            this.enterName_radioBtn1.CheckedChanged += new System.EventHandler(this.enterName_radioBtn1_CheckedChanged);
+            // 
+            // enterName_radioBtn2
+            // 
+            this.enterName_radioBtn2.AutoSize = true;
+            this.enterName_radioBtn2.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.enterName_radioBtn2.Location = new System.Drawing.Point(616, 431);
+            this.enterName_radioBtn2.Name = "enterName_radioBtn2";
+            this.enterName_radioBtn2.Size = new System.Drawing.Size(50, 31);
+            this.enterName_radioBtn2.TabIndex = 16;
+            this.enterName_radioBtn2.TabStop = true;
+            this.enterName_radioBtn2.Text = "10";
+            this.enterName_radioBtn2.UseVisualStyleBackColor = true;
+            this.enterName_radioBtn2.CheckedChanged += new System.EventHandler(this.enterName_radioBtn2_CheckedChanged);
+            // 
+            // enterName_radioBtn3
+            // 
+            this.enterName_radioBtn3.AutoSize = true;
+            this.enterName_radioBtn3.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.enterName_radioBtn3.Location = new System.Drawing.Point(690, 431);
+            this.enterName_radioBtn3.Name = "enterName_radioBtn3";
+            this.enterName_radioBtn3.Size = new System.Drawing.Size(48, 31);
+            this.enterName_radioBtn3.TabIndex = 17;
+            this.enterName_radioBtn3.TabStop = true;
+            this.enterName_radioBtn3.Text = "15";
+            this.enterName_radioBtn3.UseVisualStyleBackColor = true;
+            this.enterName_radioBtn3.CheckedChanged += new System.EventHandler(this.enterName_radioBtn3_CheckedChanged);
+            // 
             // hangman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -339,6 +476,9 @@ namespace hangmanGame_t3_indes
             this.rules.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rules_gameLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rules_img)).EndInit();
+            this.enterName.ResumeLayout(false);
+            this.enterName.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enterName_gameLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -367,6 +507,16 @@ namespace hangmanGame_t3_indes
         private System.Windows.Forms.PictureBox credits_gameLogo;
         private System.Windows.Forms.Button credits_backBtn;
         private System.Windows.Forms.PictureBox credits_img;
+        private System.Windows.Forms.Button enterName_playBtn;
+        private System.Windows.Forms.Label enterName_title;
+        private System.Windows.Forms.PictureBox enterName_gameLogo;
+        private System.Windows.Forms.Button enterName_backBtn;
+        private System.Windows.Forms.TextBox enterName_input;
+        private System.Windows.Forms.Label enterName_nameLabel;
+        private System.Windows.Forms.RadioButton enterName_radioBtn3;
+        private System.Windows.Forms.RadioButton enterName_radioBtn2;
+        private System.Windows.Forms.RadioButton enterName_radioBtn1;
+        private System.Windows.Forms.Label enterName_levelsLabel;
     }
 }
 
