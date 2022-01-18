@@ -40,13 +40,27 @@ namespace hangmanGame_t3_indes
             this.welcome_gameLogo = new System.Windows.Forms.PictureBox();
             this.welcome_gameTitle = new System.Windows.Forms.Label();
             this.welcome_gameSubtitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.welcome_question = new System.Windows.Forms.Label();
             this.welcome_playBtn = new System.Windows.Forms.Button();
             this.welcome_rulesBtn = new System.Windows.Forms.Button();
             this.welcome_creditsBtn = new System.Windows.Forms.Button();
+            this.rules_img = new System.Windows.Forms.PictureBox();
+            this.rules_backBtn = new System.Windows.Forms.Button();
+            this.rules_gameLogo = new System.Windows.Forms.PictureBox();
+            this.rules_title = new System.Windows.Forms.Label();
+            this.credits_title = new System.Windows.Forms.Label();
+            this.credits_gameLogo = new System.Windows.Forms.PictureBox();
+            this.credits_backBtn = new System.Windows.Forms.Button();
+            this.credits_img = new System.Windows.Forms.PictureBox();
             this.menu.SuspendLayout();
             this.welcome.SuspendLayout();
+            this.rules.SuspendLayout();
+            this.credits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.welcome_gameLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rules_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rules_gameLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.credits_gameLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.credits_img)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -69,7 +83,7 @@ namespace hangmanGame_t3_indes
             this.welcome.Controls.Add(this.welcome_creditsBtn);
             this.welcome.Controls.Add(this.welcome_rulesBtn);
             this.welcome.Controls.Add(this.welcome_playBtn);
-            this.welcome.Controls.Add(this.label1);
+            this.welcome.Controls.Add(this.welcome_question);
             this.welcome.Controls.Add(this.welcome_gameSubtitle);
             this.welcome.Controls.Add(this.welcome_gameTitle);
             this.welcome.Controls.Add(this.welcome_gameLogo);
@@ -93,6 +107,10 @@ namespace hangmanGame_t3_indes
             // rules
             // 
             this.rules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(36)))), ((int)(((byte)(68)))));
+            this.rules.Controls.Add(this.rules_title);
+            this.rules.Controls.Add(this.rules_gameLogo);
+            this.rules.Controls.Add(this.rules_backBtn);
+            this.rules.Controls.Add(this.rules_img);
             this.rules.ForeColor = System.Drawing.Color.White;
             this.rules.Location = new System.Drawing.Point(4, 25);
             this.rules.Name = "rules";
@@ -103,6 +121,10 @@ namespace hangmanGame_t3_indes
             // credits
             // 
             this.credits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(36)))), ((int)(((byte)(68)))));
+            this.credits.Controls.Add(this.credits_title);
+            this.credits.Controls.Add(this.credits_gameLogo);
+            this.credits.Controls.Add(this.credits_backBtn);
+            this.credits.Controls.Add(this.credits_img);
             this.credits.ForeColor = System.Drawing.Color.White;
             this.credits.Location = new System.Drawing.Point(4, 25);
             this.credits.Name = "credits";
@@ -159,15 +181,15 @@ namespace hangmanGame_t3_indes
             this.welcome_gameSubtitle.TabIndex = 3;
             this.welcome_gameSubtitle.Text = "DEMO VERSION";
             // 
-            // label1
+            // welcome_question
             // 
-            this.label1.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(549, 313);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(283, 55);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Can you guess the word before you get hung?";
+            this.welcome_question.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.welcome_question.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.welcome_question.Location = new System.Drawing.Point(549, 313);
+            this.welcome_question.Name = "welcome_question";
+            this.welcome_question.Size = new System.Drawing.Size(283, 55);
+            this.welcome_question.TabIndex = 4;
+            this.welcome_question.Text = "Can you guess the word before you get hung?";
             // 
             // welcome_playBtn
             // 
@@ -208,6 +230,88 @@ namespace hangmanGame_t3_indes
             this.welcome_creditsBtn.Text = "CREDITS";
             this.welcome_creditsBtn.UseVisualStyleBackColor = true;
             // 
+            // rules_img
+            // 
+            this.rules_img.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rules_img.BackgroundImage")));
+            this.rules_img.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.rules_img.Location = new System.Drawing.Point(6, 9);
+            this.rules_img.Name = "rules_img";
+            this.rules_img.Size = new System.Drawing.Size(1273, 627);
+            this.rules_img.TabIndex = 0;
+            this.rules_img.TabStop = false;
+            // 
+            // rules_backBtn
+            // 
+            this.rules_backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rules_backBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rules_backBtn.Location = new System.Drawing.Point(568, 604);
+            this.rules_backBtn.Name = "rules_backBtn";
+            this.rules_backBtn.Size = new System.Drawing.Size(156, 56);
+            this.rules_backBtn.TabIndex = 1;
+            this.rules_backBtn.Text = "BACK";
+            this.rules_backBtn.UseVisualStyleBackColor = true;
+            // 
+            // rules_gameLogo
+            // 
+            this.rules_gameLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rules_gameLogo.BackgroundImage")));
+            this.rules_gameLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rules_gameLogo.Location = new System.Drawing.Point(58, 3);
+            this.rules_gameLogo.Name = "rules_gameLogo";
+            this.rules_gameLogo.Size = new System.Drawing.Size(64, 106);
+            this.rules_gameLogo.TabIndex = 2;
+            this.rules_gameLogo.TabStop = false;
+            // 
+            // rules_title
+            // 
+            this.rules_title.AutoSize = true;
+            this.rules_title.Font = new System.Drawing.Font("Montserrat", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rules_title.Location = new System.Drawing.Point(137, 39);
+            this.rules_title.Name = "rules_title";
+            this.rules_title.Size = new System.Drawing.Size(145, 50);
+            this.rules_title.TabIndex = 3;
+            this.rules_title.Text = "RULES";
+            // 
+            // credits_title
+            // 
+            this.credits_title.AutoSize = true;
+            this.credits_title.Font = new System.Drawing.Font("Montserrat", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.credits_title.Location = new System.Drawing.Point(134, 37);
+            this.credits_title.Name = "credits_title";
+            this.credits_title.Size = new System.Drawing.Size(185, 50);
+            this.credits_title.TabIndex = 7;
+            this.credits_title.Text = "CREDITS";
+            // 
+            // credits_gameLogo
+            // 
+            this.credits_gameLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("credits_gameLogo.BackgroundImage")));
+            this.credits_gameLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.credits_gameLogo.Location = new System.Drawing.Point(55, 1);
+            this.credits_gameLogo.Name = "credits_gameLogo";
+            this.credits_gameLogo.Size = new System.Drawing.Size(64, 106);
+            this.credits_gameLogo.TabIndex = 6;
+            this.credits_gameLogo.TabStop = false;
+            // 
+            // credits_backBtn
+            // 
+            this.credits_backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.credits_backBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.credits_backBtn.Location = new System.Drawing.Point(565, 602);
+            this.credits_backBtn.Name = "credits_backBtn";
+            this.credits_backBtn.Size = new System.Drawing.Size(156, 56);
+            this.credits_backBtn.TabIndex = 5;
+            this.credits_backBtn.Text = "BACK";
+            this.credits_backBtn.UseVisualStyleBackColor = true;
+            // 
+            // credits_img
+            // 
+            this.credits_img.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("credits_img.BackgroundImage")));
+            this.credits_img.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.credits_img.Location = new System.Drawing.Point(3, 7);
+            this.credits_img.Name = "credits_img";
+            this.credits_img.Size = new System.Drawing.Size(1273, 627);
+            this.credits_img.TabIndex = 4;
+            this.credits_img.TabStop = false;
+            // 
             // hangman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -220,7 +324,15 @@ namespace hangmanGame_t3_indes
             this.Text = "Hangman";
             this.menu.ResumeLayout(false);
             this.welcome.ResumeLayout(false);
+            this.rules.ResumeLayout(false);
+            this.rules.PerformLayout();
+            this.credits.ResumeLayout(false);
+            this.credits.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.welcome_gameLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rules_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rules_gameLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.credits_gameLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.credits_img)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,8 +351,16 @@ namespace hangmanGame_t3_indes
         private System.Windows.Forms.Button welcome_creditsBtn;
         private System.Windows.Forms.Button welcome_rulesBtn;
         private System.Windows.Forms.Button welcome_playBtn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label welcome_question;
         private System.Windows.Forms.Label welcome_gameSubtitle;
+        private System.Windows.Forms.Label rules_title;
+        private System.Windows.Forms.PictureBox rules_gameLogo;
+        private System.Windows.Forms.Button rules_backBtn;
+        private System.Windows.Forms.PictureBox rules_img;
+        private System.Windows.Forms.Label credits_title;
+        private System.Windows.Forms.PictureBox credits_gameLogo;
+        private System.Windows.Forms.Button credits_backBtn;
+        private System.Windows.Forms.PictureBox credits_img;
     }
 }
 
