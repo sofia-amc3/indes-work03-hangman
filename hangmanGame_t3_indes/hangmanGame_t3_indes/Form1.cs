@@ -76,13 +76,18 @@ namespace hangmanGame_t3_indes
             // 15 levels
         }
 
+        // High Scores Screen -----------------------------------------------------------------------------------------------------------------------------
+        private void highScores_backBtn_Click(object sender, EventArgs e)
+        {
+            menu.SelectedIndex = 0;
+        }
+
         // Play Screen ------------------------------------------------------------------------------------------------------------------------------------
         private void play_quitBtn_Click(object sender, EventArgs e)
         {
             // after popup
             menu.SelectedIndex = 0;
         }
-
 
     }
 }
