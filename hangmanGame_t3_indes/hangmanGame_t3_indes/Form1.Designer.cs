@@ -659,6 +659,7 @@ namespace hangmanGame_t3_indes
             this.letterMBtn.TabIndex = 42;
             this.letterMBtn.Text = "M";
             this.letterMBtn.UseVisualStyleBackColor = true;
+            this.letterMBtn.Click += new System.EventHandler(this.letterMBtn_Click);
             // 
             // letterNBtn
             // 
@@ -671,6 +672,7 @@ namespace hangmanGame_t3_indes
             this.letterNBtn.TabIndex = 41;
             this.letterNBtn.Text = "N";
             this.letterNBtn.UseVisualStyleBackColor = true;
+            this.letterNBtn.Click += new System.EventHandler(this.letterNBtn_Click);
             // 
             // letterBBtn
             // 
@@ -684,6 +686,7 @@ namespace hangmanGame_t3_indes
             this.letterBBtn.TabIndex = 40;
             this.letterBBtn.Text = "B";
             this.letterBBtn.UseVisualStyleBackColor = true;
+            this.letterBBtn.Click += new System.EventHandler(this.letterBBtn_Click);
             // 
             // letterVBtn
             // 
@@ -696,6 +699,7 @@ namespace hangmanGame_t3_indes
             this.letterVBtn.TabIndex = 39;
             this.letterVBtn.Text = "V";
             this.letterVBtn.UseVisualStyleBackColor = true;
+            this.letterVBtn.Click += new System.EventHandler(this.letterVBtn_Click);
             // 
             // letterCBtn
             // 
@@ -708,6 +712,7 @@ namespace hangmanGame_t3_indes
             this.letterCBtn.TabIndex = 38;
             this.letterCBtn.Text = "C";
             this.letterCBtn.UseVisualStyleBackColor = true;
+            this.letterCBtn.Click += new System.EventHandler(this.letterCBtn_Click);
             // 
             // letterXBtn
             // 
@@ -720,6 +725,7 @@ namespace hangmanGame_t3_indes
             this.letterXBtn.TabIndex = 37;
             this.letterXBtn.Text = "X";
             this.letterXBtn.UseVisualStyleBackColor = true;
+            this.letterXBtn.Click += new System.EventHandler(this.letterXBtn_Click);
             // 
             // letterZBtn
             // 
@@ -732,6 +738,7 @@ namespace hangmanGame_t3_indes
             this.letterZBtn.TabIndex = 36;
             this.letterZBtn.Text = "Z";
             this.letterZBtn.UseVisualStyleBackColor = true;
+            this.letterZBtn.Click += new System.EventHandler(this.letterZBtn_Click);
             // 
             // letterLBtn
             // 
@@ -744,6 +751,7 @@ namespace hangmanGame_t3_indes
             this.letterLBtn.TabIndex = 34;
             this.letterLBtn.Text = "L";
             this.letterLBtn.UseVisualStyleBackColor = true;
+            this.letterLBtn.Click += new System.EventHandler(this.letterLBtn_Click);
             // 
             // letterKBtn
             // 
@@ -756,6 +764,7 @@ namespace hangmanGame_t3_indes
             this.letterKBtn.TabIndex = 33;
             this.letterKBtn.Text = "K";
             this.letterKBtn.UseVisualStyleBackColor = true;
+            this.letterKBtn.Click += new System.EventHandler(this.letterKBtn_Click);
             // 
             // letterJBtn
             // 
@@ -769,6 +778,7 @@ namespace hangmanGame_t3_indes
             this.letterJBtn.TabIndex = 32;
             this.letterJBtn.Text = "J";
             this.letterJBtn.UseVisualStyleBackColor = true;
+            this.letterJBtn.Click += new System.EventHandler(this.letterJBtn_Click);
             // 
             // letterHBtn
             // 
@@ -781,6 +791,7 @@ namespace hangmanGame_t3_indes
             this.letterHBtn.TabIndex = 31;
             this.letterHBtn.Text = "H";
             this.letterHBtn.UseVisualStyleBackColor = true;
+            this.letterHBtn.Click += new System.EventHandler(this.letterHBtn_Click);
             // 
             // letterGBtn
             // 
@@ -793,6 +804,7 @@ namespace hangmanGame_t3_indes
             this.letterGBtn.TabIndex = 30;
             this.letterGBtn.Text = "G";
             this.letterGBtn.UseVisualStyleBackColor = true;
+            this.letterGBtn.Click += new System.EventHandler(this.letterGBtn_Click);
             // 
             // letterFBtn
             // 
@@ -805,6 +817,7 @@ namespace hangmanGame_t3_indes
             this.letterFBtn.TabIndex = 29;
             this.letterFBtn.Text = "F";
             this.letterFBtn.UseVisualStyleBackColor = true;
+            this.letterFBtn.Click += new System.EventHandler(this.letterFBtn_Click);
             // 
             // letterDBtn
             // 
@@ -817,6 +830,7 @@ namespace hangmanGame_t3_indes
             this.letterDBtn.TabIndex = 28;
             this.letterDBtn.Text = "D";
             this.letterDBtn.UseVisualStyleBackColor = true;
+            this.letterDBtn.Click += new System.EventHandler(this.letterDBtn_Click);
             // 
             // letterSBtn
             // 
@@ -829,6 +843,7 @@ namespace hangmanGame_t3_indes
             this.letterSBtn.TabIndex = 27;
             this.letterSBtn.Text = "S";
             this.letterSBtn.UseVisualStyleBackColor = true;
+            this.letterSBtn.Click += new System.EventHandler(this.letterSBtn_Click);
             // 
             // letterABtn
             // 
@@ -841,6 +856,7 @@ namespace hangmanGame_t3_indes
             this.letterABtn.TabIndex = 26;
             this.letterABtn.Text = "A";
             this.letterABtn.UseVisualStyleBackColor = true;
+            this.letterABtn.Click += new System.EventHandler(this.letterABtn_Click);
             // 
             // letterPBtn
             // 
@@ -853,6 +869,7 @@ namespace hangmanGame_t3_indes
             this.letterPBtn.TabIndex = 25;
             this.letterPBtn.Text = "P";
             this.letterPBtn.UseVisualStyleBackColor = true;
+            this.letterPBtn.Click += new System.EventHandler(this.letterPBtn_Click);
             // 
             // letterOBtn
             // 
@@ -865,6 +882,7 @@ namespace hangmanGame_t3_indes
             this.letterOBtn.TabIndex = 24;
             this.letterOBtn.Text = "O";
             this.letterOBtn.UseVisualStyleBackColor = true;
+            this.letterOBtn.Click += new System.EventHandler(this.letterOBtn_Click);
             // 
             // letterIBtn
             // 
@@ -877,6 +895,7 @@ namespace hangmanGame_t3_indes
             this.letterIBtn.TabIndex = 23;
             this.letterIBtn.Text = "I";
             this.letterIBtn.UseVisualStyleBackColor = true;
+            this.letterIBtn.Click += new System.EventHandler(this.letterIBtn_Click);
             // 
             // letterUBtn
             // 
@@ -889,6 +908,7 @@ namespace hangmanGame_t3_indes
             this.letterUBtn.TabIndex = 22;
             this.letterUBtn.Text = "U";
             this.letterUBtn.UseVisualStyleBackColor = true;
+            this.letterUBtn.Click += new System.EventHandler(this.letterUBtn_Click);
             // 
             // letterYBtn
             // 
@@ -901,6 +921,7 @@ namespace hangmanGame_t3_indes
             this.letterYBtn.TabIndex = 21;
             this.letterYBtn.Text = "Y";
             this.letterYBtn.UseVisualStyleBackColor = true;
+            this.letterYBtn.Click += new System.EventHandler(this.letterYBtn_Click);
             // 
             // letterTBtn
             // 
@@ -913,6 +934,7 @@ namespace hangmanGame_t3_indes
             this.letterTBtn.TabIndex = 20;
             this.letterTBtn.Text = "T";
             this.letterTBtn.UseVisualStyleBackColor = true;
+            this.letterTBtn.Click += new System.EventHandler(this.letterTBtn_Click);
             // 
             // letterRBtn
             // 
@@ -925,6 +947,7 @@ namespace hangmanGame_t3_indes
             this.letterRBtn.TabIndex = 19;
             this.letterRBtn.Text = "R";
             this.letterRBtn.UseVisualStyleBackColor = true;
+            this.letterRBtn.Click += new System.EventHandler(this.letterRBtn_Click);
             // 
             // letterEBtn
             // 
@@ -937,6 +960,7 @@ namespace hangmanGame_t3_indes
             this.letterEBtn.TabIndex = 18;
             this.letterEBtn.Text = "E";
             this.letterEBtn.UseVisualStyleBackColor = true;
+            this.letterEBtn.Click += new System.EventHandler(this.letterEBtn_Click);
             // 
             // letterWBtn
             // 
@@ -949,6 +973,7 @@ namespace hangmanGame_t3_indes
             this.letterWBtn.TabIndex = 17;
             this.letterWBtn.Text = "W";
             this.letterWBtn.UseVisualStyleBackColor = true;
+            this.letterWBtn.Click += new System.EventHandler(this.letterWBtn_Click);
             // 
             // letterQBtn
             // 
@@ -961,6 +986,7 @@ namespace hangmanGame_t3_indes
             this.letterQBtn.TabIndex = 16;
             this.letterQBtn.Text = "Q";
             this.letterQBtn.UseVisualStyleBackColor = true;
+            this.letterQBtn.Click += new System.EventHandler(this.letterQBtn_Click);
             // 
             // play_hangman
             // 
