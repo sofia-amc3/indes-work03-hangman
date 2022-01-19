@@ -17,7 +17,7 @@ namespace hangmanGame_t3_indes
 {
     public partial class hangman : Form
     {
-        //Variables
+        // Global Variables
         string userName;
         int score;
         List<Player> playerList;
@@ -25,41 +25,37 @@ namespace hangmanGame_t3_indes
         string playerListPath;
         string wordListPath;
         int currentPlayer;
+        int currentLevel = 1;
+        int totalLevels;
 
         public hangman()
         {
-
-            //Initialize list
+            // Initialize list
             playerList = new List<Player>();
             
             InitializeComponent();
-           // wordListPath = @"hangmanGame_t3_indes\jsonFiles\HangManWords.json";
-           wordListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\HangManWords.json");
+            wordListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\HangManWords.json");
             Debug.WriteLine(wordListPath);
 
-
-
-            //Check if file exists
+            // Check if file exists
             if (File.Exists(wordListPath))
-              {
+            {
                   string json = File.ReadAllText(wordListPath);
                   itemsList = JsonConvert.DeserializeObject<List<Item>>(json);
                   Debug.WriteLine(itemsList.Count);
-                  Debug.WriteLine("It exists");
+                  Debug.WriteLine("File exists");
+            }
+            else { Debug.WriteLine("File doesn't exist"); }
 
-              }
-              else { Debug.WriteLine("It doesnt exist"); }
+            // Player list url
+            playerListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\Players.json");
 
-              //PLayer list url
-              playerListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\Players.json");
-
-            //Check if player file exists
+            // Check if player file exists
             if (File.Exists(playerListPath))
             {
-                //Get top five player data
+                // Get top five players' data
                 string json = File.ReadAllText(playerListPath);
                 playerList = JsonConvert.DeserializeObject<List<Player>>(json);
-
             }
             else {
 
@@ -67,7 +63,6 @@ namespace hangmanGame_t3_indes
             }
 
             currentPlayer = playerList.Count;
-
         }
 
         // Welcome Screen --------------------------------------------------------------------------------------------------------------------------------------
@@ -101,32 +96,29 @@ namespace hangmanGame_t3_indes
         // Enter Name Screen ------------------------------------------------------------------------------------------------------------------------------------
         private void enterName_playBtn_Click(object sender, EventArgs e)
         {
+            // Verifies if the name inside of the input is valid 
+            if(enterName_input.Text.Length >= 3 && enterName_input.Text.Length <= 3)
+            {
+                // Adds it to the json database
+            } else
+            {
+                MessageBox.Show("Please enter a player name between 3 and 20 characters.", "Invalid Player Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Checks which number of levels was selected
+            if (enterName_radioBtn1.Checked) totalLevels = 5;
+            else if (enterName_radioBtn2.Checked) totalLevels = 10;
+            else if (enterName_radioBtn3.Checked) totalLevels = 15;
+            else MessageBox.Show("No number of levels was selected. Please select your total number of levels.", "No Levels Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            // Goes to Play Area
+            displayGame();
             menu.SelectedIndex = 4;
         }
 
         private void enterName_backBtn_Click(object sender, EventArgs e)
         {
             menu.SelectedIndex = 0;
-        }
-
-        private void enterName_input_TextChanged(object sender, EventArgs e)
-        {
-            // Enter Player Name Input
-        }
-
-        private void enterName_radioBtn1_CheckedChanged(object sender, EventArgs e)
-        {
-            // 5 levels
-        }
-
-        private void enterName_radioBtn2_CheckedChanged(object sender, EventArgs e)
-        {
-            // 10 levels
-        }
-
-        private void enterName_radioBtn3_CheckedChanged(object sender, EventArgs e)
-        {
-            // 15 levels
         }
 
         // High Scores Screen -----------------------------------------------------------------------------------------------------------------------------
@@ -274,20 +266,22 @@ namespace hangmanGame_t3_indes
         }
 
         //Save player data 
-        private void SaveUserData(string playerName, int playerScore) {
-
-            //Save player data
+        private void SaveUserData(string playerName, int playerScore) 
+        {
             string json = JsonConvert.SerializeObject(playerList);
             File.WriteAllText(playerListPath, json);
+        }
 
-        
+        private void displayGame()
+        {
+            play_currentLevel.Text = "Level " + currentLevel + "/" + totalLevels;
         }
     }
 }
 
 [System.Serializable]
-public class Item { 
-
+public class Item 
+{ 
     public int id;
     public string name;
     public string difficulty;
@@ -295,10 +289,9 @@ public class Item {
 }
 
 [System.Serializable]
-public class Player { 
-
+public class Player 
+{ 
     public int id;
     public string name;
     public int score;
-
 }

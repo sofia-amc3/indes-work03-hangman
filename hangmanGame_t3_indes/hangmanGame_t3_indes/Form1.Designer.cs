@@ -391,14 +391,13 @@ namespace hangmanGame_t3_indes
             this.enterName_radioBtn3.Name = "enterName_radioBtn3";
             this.enterName_radioBtn3.Size = new System.Drawing.Size(48, 31);
             this.enterName_radioBtn3.TabIndex = 17;
-            this.enterName_radioBtn3.TabStop = true;
             this.enterName_radioBtn3.Text = "15";
             this.enterName_radioBtn3.UseVisualStyleBackColor = true;
-            this.enterName_radioBtn3.CheckedChanged += new System.EventHandler(this.enterName_radioBtn3_CheckedChanged);
             // 
             // enterName_radioBtn2
             // 
             this.enterName_radioBtn2.AutoSize = true;
+            this.enterName_radioBtn2.Checked = true;
             this.enterName_radioBtn2.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.enterName_radioBtn2.Location = new System.Drawing.Point(616, 431);
             this.enterName_radioBtn2.Name = "enterName_radioBtn2";
@@ -407,7 +406,6 @@ namespace hangmanGame_t3_indes
             this.enterName_radioBtn2.TabStop = true;
             this.enterName_radioBtn2.Text = "10";
             this.enterName_radioBtn2.UseVisualStyleBackColor = true;
-            this.enterName_radioBtn2.CheckedChanged += new System.EventHandler(this.enterName_radioBtn2_CheckedChanged);
             // 
             // enterName_radioBtn1
             // 
@@ -417,10 +415,8 @@ namespace hangmanGame_t3_indes
             this.enterName_radioBtn1.Name = "enterName_radioBtn1";
             this.enterName_radioBtn1.Size = new System.Drawing.Size(41, 31);
             this.enterName_radioBtn1.TabIndex = 15;
-            this.enterName_radioBtn1.TabStop = true;
             this.enterName_radioBtn1.Text = "5";
             this.enterName_radioBtn1.UseVisualStyleBackColor = true;
-            this.enterName_radioBtn1.CheckedChanged += new System.EventHandler(this.enterName_radioBtn1_CheckedChanged);
             // 
             // enterName_levelsLabel
             // 
@@ -441,7 +437,6 @@ namespace hangmanGame_t3_indes
             this.enterName_input.Name = "enterName_input";
             this.enterName_input.Size = new System.Drawing.Size(330, 27);
             this.enterName_input.TabIndex = 13;
-            this.enterName_input.TextChanged += new System.EventHandler(this.enterName_input_TextChanged);
             // 
             // enterName_nameLabel
             // 

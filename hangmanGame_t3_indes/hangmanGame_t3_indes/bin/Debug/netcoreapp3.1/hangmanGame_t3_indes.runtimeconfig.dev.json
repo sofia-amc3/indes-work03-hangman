@@ -1,9 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\dldra\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\dldra\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\SAP-PSC6-G7\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\SAP-PSC6-G7\\.nuget\\packages"
     ]
   }
 }
