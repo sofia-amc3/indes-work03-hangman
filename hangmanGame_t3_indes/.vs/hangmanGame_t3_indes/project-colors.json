@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "631b94f1-ce7c-49a4-9a2e-2fd387eedd24": {
+      "ProjectGuid": "631b94f1-ce7c-49a4-9a2e-2fd387eedd24",
+      "DisplayName": "hangmanGame_t3_indes",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

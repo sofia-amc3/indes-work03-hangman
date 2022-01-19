@@ -7,14 +7,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.IO;
+using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace hangmanGame_t3_indes
 {
     public partial class hangman : Form
     {
+        //Variables
+        string userName;
+        int score;
+        List<Player> playerList;
+        List<Item> itemsList;
+        string playerListPath;
+        string wordListPath;
+        int currentPlayer;
+
         public hangman()
         {
+
+            //Initialize list
+            playerList = new List<Player>();
+            
             InitializeComponent();
+           // wordListPath = @"hangmanGame_t3_indes\jsonFiles\HangManWords.json";
+           wordListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\HangManWords.json");
+            Debug.WriteLine(wordListPath);
+
+
+
+            //Check if file exists
+            if (File.Exists(wordListPath))
+              {
+                  string json = File.ReadAllText(wordListPath);
+                  itemsList = JsonConvert.DeserializeObject<List<Item>>(json);
+                  Debug.WriteLine(itemsList.Count);
+                  Debug.WriteLine("It exists");
+
+              }
+              else { Debug.WriteLine("It doesnt exist"); }
+
+              //PLayer list url
+              playerListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\Players.json");
+
+            //Check if player file exists
+            if (File.Exists(playerListPath))
+            {
+                //Get top five player data
+                string json = File.ReadAllText(playerListPath);
+                playerList = JsonConvert.DeserializeObject<List<Player>>(json);
+
+            }
+            else {
+
+                Debug.WriteLine("Players.json doesn't exist");
+            }
+
+            currentPlayer = playerList.Count;
+
         }
 
         // Welcome Screen --------------------------------------------------------------------------------------------------------------------------------------
@@ -219,5 +272,33 @@ namespace hangmanGame_t3_indes
             // after popup
             menu.SelectedIndex = 0;
         }
+
+        //Save player data 
+        private void SaveUserData(string playerName, int playerScore) {
+
+            //Save player data
+            string json = JsonConvert.SerializeObject(playerList);
+            File.WriteAllText(playerListPath, json);
+
+        
+        }
     }
+}
+
+[System.Serializable]
+public class Item { 
+
+    public int id;
+    public string name;
+    public string difficulty;
+    public string theme;
+}
+
+[System.Serializable]
+public class Player { 
+
+    public int id;
+    public string name;
+    public int score;
+
 }
