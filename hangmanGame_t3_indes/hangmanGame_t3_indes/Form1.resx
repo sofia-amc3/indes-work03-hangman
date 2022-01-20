@@ -57,8 +57,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=4.0.2.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
-  <data name="welcome_gameLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="welcome_gameLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUgAAAKcCAYAAACKUyOXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
         EQAAFxEByibzPwAARrhJREFUeF7tnY2V7DpypGXCmiATZMKaIBPWhDFBJsgEmbAmyIQ1YU1YD2Y77jz2
@@ -366,7 +366,7 @@
         1Zvyp9IZAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="credits_gameLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="credits_gameLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUgAAAKcCAYAAACKUyOXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
         EQAAFxEByibzPwAARrhJREFUeF7tnY2V7DpypGXCmiATZMKaIBPWhDFBJsgEmbAmyIQ1YU1YD2Y77jz2
@@ -674,7 +674,7 @@
         1Zvyp9IZAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="credits_img.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="credits_img.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAYAAADPfd1WAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAApf9JREFUeF7t/c2rZdl9J3g//8Iz8cQTDZ6aVBckqDwpN6TVVT1wg9Ny1aBUEEm7
@@ -1388,7 +1388,7 @@
         AAgAAAAAByYACAAAAAAHJgAIAAAAAIf13z/8/wNCpQzDiiDNAgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="rules_gameLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="rules_gameLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUgAAAKcCAYAAACKUyOXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
         EQAAFxEByibzPwAARrhJREFUeF7tnY2V7DpypGXCmiATZMKaIBPWhDFBJsgEmbAmyIQ1YU1YD2Y77jz2
@@ -1696,7 +1696,7 @@
         1Zvyp9IZAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="rules_img.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="rules_img.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAYAAADPfd1WAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAA/7JJREFUeF7s/Ym/ZFV194///oWvRjKQgeQJDjh0RDQqSYvyiKg0CCqtdCs4QYND
@@ -3194,7 +3194,7 @@
         ACVJkiRJkqQpZgAoSZIkSZIkTa1vNf9/+o6os5c+eAQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="enterName_gameLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="enterName_gameLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUgAAAKcCAYAAACKUyOXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
         EQAAFxEByibzPwAARrhJREFUeF7tnY2V7DpypGXCmiATZMKaIBPWhDFBJsgEmbAmyIQ1YU1YD2Y77jz2
@@ -3502,7 +3502,7 @@
         1Zvyp9IZAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="play_hangman.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="play_hangman.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyEAAAMhCAYAAAD/7r7zAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
         EQAAFxEByibzPwAAP3hJREFUeF7t3c2NbFeWJegSgSJQBIpAETjvCUWgCCkCFWiAox5zUnOKQKAVIGpS
@@ -3779,7 +3779,7 @@
         /wH7aXmIx5aeOgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="highScores_gameLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="highScores_gameLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUgAAAKcCAYAAACKUyOXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
         EQAAFxEByibzPwAARrhJREFUeF7tnY2V7DpypGXCmiATZMKaIBPWhDFBJsgEmbAmyIQ1YU1YD2Y77jz2
