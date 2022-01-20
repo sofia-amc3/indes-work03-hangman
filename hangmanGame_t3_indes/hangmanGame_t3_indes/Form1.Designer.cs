@@ -1007,10 +1007,10 @@ namespace hangmanGame_t3_indes
             // 
             // play_letterDashes
             // 
-            this.play_letterDashes.Font = new System.Drawing.Font("Montserrat", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.play_letterDashes.Font = new System.Drawing.Font("Montserrat", 47F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.play_letterDashes.Location = new System.Drawing.Point(119, 124);
             this.play_letterDashes.Name = "play_letterDashes";
-            this.play_letterDashes.Size = new System.Drawing.Size(611, 84);
+            this.play_letterDashes.Size = new System.Drawing.Size(611, 89);
             this.play_letterDashes.TabIndex = 13;
             this.play_letterDashes.Text = "_ _ _ _ _ _ _ _ _ _";
             this.play_letterDashes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

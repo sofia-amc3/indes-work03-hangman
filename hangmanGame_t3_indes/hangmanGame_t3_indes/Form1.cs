@@ -127,6 +127,7 @@ namespace hangmanGame_t3_indes
         private void enterName_playBtn_Click(object sender, EventArgs e)
         {
             int check = 0;
+            
             // Verifies if the name inside of the input is valid 
             if(enterName_input.Text.Length >= 3 && enterName_input.Text.Length <= 20)
             {
@@ -422,6 +423,7 @@ namespace hangmanGame_t3_indes
 
         }
 
+        #region Randomize Words
         //Randomize easy words
         private void EasyWordRnd() {
 
@@ -446,23 +448,19 @@ namespace hangmanGame_t3_indes
             chosenWord = items[rnd.Next(0, items.Count)];
             alreadyUsedWords.Add(chosenWord);
             devidedWord = SeparateWord(chosenWord.name);
+            
             string playWord = "";
             string line = "";
 
             for (int i = 0; i < devidedWord.Count; i++)
             { 
                 playWord += devidedWord[i];
-
-                if (devidedWord[i] != " ")
-                {
-
-                    line += "_";
-
-                }
-                else {
+                line += "_";
+               
+                if (i != devidedWord.Count - 1) {
 
                     line += " ";
-                
+                    playWord += "  ";
                 }
             
             }
@@ -586,20 +584,20 @@ namespace hangmanGame_t3_indes
 
         }
 
+        #endregion
 
+
+        //Add the letters to a list
         private List<string> SeparateWord(string x) {
 
 
             List<string> newWord = new List<string>();
 
+            
             foreach (char c in x) {
 
                 newWord.Add(c.ToString());
-                newWord.Add(" ");
-
             }
-
-            newWord.RemoveAt(newWord.Count - 1);
 
             return newWord;
         }
@@ -623,7 +621,7 @@ namespace hangmanGame_t3_indes
 
         }
 
-        //
+        // Cheack if input is right
     }
 }
 
