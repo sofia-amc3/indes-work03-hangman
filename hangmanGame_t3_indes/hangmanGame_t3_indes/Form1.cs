@@ -97,7 +97,7 @@ namespace hangmanGame_t3_indes
         private void enterName_playBtn_Click(object sender, EventArgs e)
         {
             // Verifies if the name inside of the input is valid 
-            if(enterName_input.Text.Length >= 3 && enterName_input.Text.Length <= 3)
+            if(enterName_input.Text.Length >= 3 && enterName_input.Text.Length <= 20)
             {
                 // Adds it to the json database
             } else
