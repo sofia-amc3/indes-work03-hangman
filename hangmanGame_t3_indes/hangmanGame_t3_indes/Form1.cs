@@ -422,9 +422,13 @@ namespace hangmanGame_t3_indes
         // Play Screen ------------------------------------------------------------------------------------------------------------------------------------
         private void play_quitBtn_Click(object sender, EventArgs e)
         {
-            // after popup
-            menu.SelectedIndex = 5;
-            DisplayHighScores();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to quit? You will lose all your progress.", "Quit", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // go back to welcome page ################# change this -> now it goes to high scores
+                menu.SelectedIndex = 5;
+                DisplayHighScores();
+            }
         }
 
         //Save player data 
