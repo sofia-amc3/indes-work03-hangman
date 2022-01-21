@@ -35,3 +35,21 @@ D:\Terceiro projecto de INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_
 D:\Terceiro projecto de INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.csproj.CopyComplete
 D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.csproj.CopyComplete
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\bin\Debug\netcoreapp3.1\hangmanGame_t3_indes.exe
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\bin\Debug\netcoreapp3.1\hangmanGame_t3_indes.deps.json
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\bin\Debug\netcoreapp3.1\hangmanGame_t3_indes.runtimeconfig.json
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\bin\Debug\netcoreapp3.1\hangmanGame_t3_indes.runtimeconfig.dev.json
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\bin\Debug\netcoreapp3.1\hangmanGame_t3_indes.dll
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\bin\Debug\netcoreapp3.1\hangmanGame_t3_indes.pdb
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.csprojAssemblyReference.cache
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.hangman.resources
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.Properties.Resources.resources
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.csproj.GenerateResource.cache
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.AssemblyInfoInputs.cache
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.AssemblyInfo.cs
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.csproj.CoreCompileInputs.cache
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.csproj.CopyComplete
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.dll
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.pdb
+D:\INDES\trabalho03-indes\hangmanGame_t3_indes\hangmanGame_t3_indes\obj\Debug\netcoreapp3.1\hangmanGame_t3_indes.genruntimeconfig.cache

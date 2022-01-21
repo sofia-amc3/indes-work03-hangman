@@ -28,7 +28,16 @@ namespace hangmanGame_t3_indes
         int totalLevels;
         Item chosenWord;
         List<string> devidedWord;
-        List<Item> alreadyUsedWords = new List<Item>();
+        List<Item> alreadyUsedLetters = new List<Item>();
+        List<Button> clickedButtons = new List<Button>();
+        List<String> revealedLetters = new List<String>();
+        int numLettersDiscovered = 0;
+        int hangmanStage = 0;
+
+        // Color for gray out buttons
+        Color backgroundOriginal = Color.FromArgb(255, 17, 36, 68);
+        Color backgroundUsed = Color.FromArgb(150, 17, 36, 68);
+        Color foregroundUsed = Color.FromArgb(150, 255, 255, 255);
 
         public hangman()
         {
@@ -178,134 +187,144 @@ namespace hangmanGame_t3_indes
         }
 
         // Play Screen (Keyboard) -------------------------------------------------------------------------------------------------------------------------
-        private void letterQBtn_Click(object sender, EventArgs e)
+        private void letterBtn_Click(object sender, EventArgs e)
         {
+            Button btn = sender as Button;
 
+            clickedButtons.Add(btn);
+
+            btn.Enabled = false;
+            btn.BackColor = backgroundUsed;
+            btn.ForeColor = foregroundUsed;
+
+            RegisterLetter(btn.Text);
         }
 
-        private void letterWBtn_Click(object sender, EventArgs e)
+        private void RegisterLetter(string letter)
         {
+            if (devidedWord.Contains(letter))
+            {
+                revealedLetters.Add(letter);
+                int counter = 0;
+                // Guessed a letter - reveal the letters from the word
+                foreach (string wordLetter in devidedWord)
+                {
+                    if (wordLetter == letter)
+                    {
+                        // Player found a letter!
+                        numLettersDiscovered++;
+                        // Show letter - Create label at the correct position and fill it with the letter
+                        if (devidedWord.Count % 2 == 0)
+                        {
+                            // First pos = 373 - (((devidedWord.Count - 2) / 2) * 30) (space between letters)
+                            int pos = 373 - (((devidedWord.Count - 2) / 2) * 30);
+                            pos = pos + 30 * counter;
+                            Label blankSpace = new Label();
+                            blankSpace.Text = letter;
+                            blankSpace.Name = "";
+                            blankSpace.ForeColor = Color.White;
+                            blankSpace.AutoSize = true;
+                            blankSpace.TextAlign = ContentAlignment.MiddleCenter;
+                            blankSpace.Location = new Point(pos, 150);
+                            blankSpace.Font = new Font("Montserrat", 39);
+                            play.Controls.Add(blankSpace);
+                        }
+                        else
+                        {
+                            // First pos = 403 - (((devidedWord.Count - 1) / 2) * 30) (space between letters)
+                            int pos = 403 - ((devidedWord.Count - 1) / 2) * 30;
+                            pos = pos + 30 * counter;
+                            Label blankSpace = new Label();
+                            blankSpace.Text = letter;
+                            blankSpace.Name = "";
+                            blankSpace.ForeColor = Color.White;
+                            blankSpace.AutoSize = true;
+                            blankSpace.TextAlign = ContentAlignment.MiddleCenter;
+                            blankSpace.Location = new Point(pos, 150);
+                            blankSpace.Font = new Font("Montserrat", 39);
+                            play.Controls.Add(blankSpace);
+                        }
+                    }
+                    counter++;
+                }
 
+                // After putting the letters in place, check if the player has won 
+                CheckIfWon();
+            }
+            else
+            {
+                // Player did not get a letter right - Punish them!
+                AdvanceHangman();
+            }
         }
 
-        private void letterEBtn_Click(object sender, EventArgs e)
+        private void AdvanceHangman()
         {
+            hangmanStage++;
 
+            // Change image depending on the stage!
+            switch (hangmanStage) {
+                case 1:
+
+                    break;
+
+                case 2:
+
+                    break;
+
+                case 3:
+
+                    break;
+
+                case 4:
+
+                    break;
+
+                case 5:
+
+                    break;
+
+                case 6:
+
+                    break;
+            }
+
+            // After changing the image, check if the player has lost.
+
+            CheckIfLost();
         }
 
-        private void letterRBtn_Click(object sender, EventArgs e)
+        private void CheckIfWon()
         {
-
+            // The player WINS when numDiscoveredLetters = devidedWord.Count
+            if (numLettersDiscovered == devidedWord.Count)
+            {
+                // Disable all the buttons!
+                // When the player wins, move him to a win screen, and reset the buttons' appearances so they are not greyed out
+                ResetButtons();
+            }
         }
 
-        private void letterTBtn_Click(object sender, EventArgs e)
+        private void CheckIfLost()
         {
-
+            // The player LOSES when hangmanStage = 6 (full image)
+            if (hangmanStage == 6)
+            {
+                // Disable all the buttons!
+                // Show the full word
+                // When the player loses, move him to a lose screen, and reset the buttons' appearances so they are not greyed out
+                ResetButtons();
+            }
         }
 
-        private void letterYBtn_Click(object sender, EventArgs e)
+        private void ResetButtons()
         {
-
-        }
-
-        private void letterUBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterIBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterOBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterPBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterABtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterSBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterDBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterFBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterGBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterHBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterJBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterKBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterLBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterZBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterXBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterCBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterVBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterBBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterNBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void letterMBtn_Click(object sender, EventArgs e)
-        {
-
+            foreach (Button btn in clickedButtons)
+            {
+                btn.Enabled = true;
+                btn.ForeColor = Color.White;
+                btn.BackColor = backgroundOriginal;
+            }
         }
 
         // Play Screen ------------------------------------------------------------------------------------------------------------------------------------
@@ -434,7 +453,7 @@ namespace hangmanGame_t3_indes
             {
 
                 //Add only the easy difficulty words
-                if (wordList[i].difficulty == "easy" && !alreadyUsedWords.Contains(wordList[i]))
+                if (wordList[i].difficulty == "easy" && !alreadyUsedLetters.Contains(wordList[i]))
                 {
 
                     //Add word to new list
@@ -446,7 +465,7 @@ namespace hangmanGame_t3_indes
 
             Random rnd = new Random();
             chosenWord = items[rnd.Next(0, items.Count)];
-            alreadyUsedWords.Add(chosenWord);
+            alreadyUsedLetters.Add(chosenWord);
             devidedWord = SeparateWord(chosenWord.name);
             
             string playWord = "";
@@ -466,9 +485,10 @@ namespace hangmanGame_t3_indes
             }
 
             //Add values to labels
-            play_word.Text = playWord;
+            //play_word.Text = playWord;
             play_theme.Text = chosenWord.theme.ToUpper();
-            play_letterDashes.Text = line;
+            GenerateBlankSpaces(chosenWord.name);
+            play_letterDashes.Text = "";
 
 
         }
@@ -484,7 +504,7 @@ namespace hangmanGame_t3_indes
             {
 
                 //Add only the average difficulty words
-                if (wordList[i].difficulty == "average" && !alreadyUsedWords.Contains(wordList[i]))
+                if (wordList[i].difficulty == "average" && !alreadyUsedLetters.Contains(wordList[i]))
                 {
 
                     //Add word to new list
@@ -499,7 +519,7 @@ namespace hangmanGame_t3_indes
             chosenWord = items[rnd.Next(0, items.Count)];
 
             //Add chosen word to already used words, so tht it's not picked again
-            alreadyUsedWords.Add(chosenWord);
+            alreadyUsedLetters.Add(chosenWord);
 
             //Splite the word in to list
             devidedWord = SeparateWord(chosenWord.name);
@@ -526,11 +546,50 @@ namespace hangmanGame_t3_indes
             }
 
             //Add values to labels
-            play_word.Text = playWord;
+            //play_word.Text = playWord;
             play_theme.Text = chosenWord.theme.ToUpper();
-            play_letterDashes.Text = line;
+            GenerateBlankSpaces(chosenWord.name);
+            play_letterDashes.Text = "";
 
 
+        }
+
+        private void GenerateBlankSpaces(String word)
+        {
+            if (word.Length % 2 == 0)
+            {
+                Label blankSpace = new Label();
+                blankSpace.Text = "_";
+                blankSpace.Name = "";
+                blankSpace.ForeColor = Color.White;
+                blankSpace.AutoSize = true;
+                blankSpace.TextAlign = ContentAlignment.MiddleCenter;
+                blankSpace.Location = new Point(373, 174);
+                blankSpace.Font = new Font("Montserrat", 43);
+                play.Controls.Add(blankSpace);
+
+                Label blankSpace2 = new Label();
+                blankSpace2.Text = "_";
+                blankSpace2.Name = "";
+                blankSpace2.ForeColor = Color.White;
+                blankSpace2.AutoSize = true;
+                blankSpace2.TextAlign = ContentAlignment.MiddleCenter;
+                blankSpace2.Location = new Point(433, 174);
+                blankSpace2.Font = new Font("Montserrat", 43);
+                play.Controls.Add(blankSpace2);
+            }
+            else
+            {
+                Label blankSpace = new Label();
+                blankSpace.Text = "_";
+                blankSpace.Name = "";
+                blankSpace.ForeColor = Color.White;
+                blankSpace.AutoSize = true;
+                blankSpace.TextAlign = ContentAlignment.MiddleCenter;
+                blankSpace.Location = new Point(403, 174);
+                blankSpace.Font = new Font("Montserrat", 43);
+                play.Controls.Add(blankSpace);
+            }
         }
 
         //Randomize difficult words
@@ -544,7 +603,7 @@ namespace hangmanGame_t3_indes
             {
 
                 //Add only the difficult words
-                if (wordList[i].difficulty == "difficult" && !alreadyUsedWords.Contains(wordList[i]))
+                if (wordList[i].difficulty == "difficult" && !alreadyUsedLetters.Contains(wordList[i]))
                 {
 
                     //Add word to new list
@@ -559,7 +618,7 @@ namespace hangmanGame_t3_indes
             chosenWord = items[rnd.Next(0, items.Count)];
 
             //Add chosen word to already used words, so tht it's not picked again
-            alreadyUsedWords.Add(chosenWord);
+            alreadyUsedLetters.Add(chosenWord);
 
             //Splite the word in to list
             devidedWord = SeparateWord(chosenWord.name);
@@ -578,9 +637,10 @@ namespace hangmanGame_t3_indes
             }
 
             //Add values to labels
-            play_word.Text = playWord;
+            //play_word.Text = playWord;
             play_theme.Text = chosenWord.theme.ToUpper();
-            play_letterDashes.Text = line;
+            GenerateBlankSpaces(chosenWord.name);
+            play_letterDashes.Text = "";
 
         }
 

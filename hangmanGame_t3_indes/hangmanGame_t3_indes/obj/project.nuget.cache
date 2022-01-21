@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2Yp62lbWA5aZtgma9gNAzU3hbYMhK35cZowApsNQ2+AwJIlKbXsGJVYlD4kTG1pE3bE6lmyuBrlugBeFXRC9Sw==",
+  "dgSpecHash": "oj10MQRIq+6qWapOTibWG8U7RwBJ9QC6CZWzj17S2cvL1usHffSjLNlbPlSM7twkyoZTnrBMR4haNAP4Mu0gsA==",
   "success": true,
-  "projectFilePath": "D:\\Terceiro projecto de INDES\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes.csproj",
+  "projectFilePath": "D:\\INDES\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dldra\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\dldra\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.21\\microsoft.netcore.app.host.win-x64.3.1.21.nupkg.sha512"
+    "C:\\Users\\franc\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

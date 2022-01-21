@@ -162,9 +162,9 @@ namespace hangmanGame_t3_indes
             this.welcome.Controls.Add(this.welcome_gameTitle);
             this.welcome.Controls.Add(this.welcome_gameLogo);
             this.welcome.ForeColor = System.Drawing.Color.White;
-            this.welcome.Location = new System.Drawing.Point(4, 25);
+            this.welcome.Location = new System.Drawing.Point(4, 30);
             this.welcome.Name = "welcome";
-            this.welcome.Size = new System.Drawing.Size(1280, 701);
+            this.welcome.Size = new System.Drawing.Size(1280, 696);
             this.welcome.TabIndex = 0;
             this.welcome.Text = "welcome";
             // 
@@ -258,9 +258,9 @@ namespace hangmanGame_t3_indes
             this.credits.Controls.Add(this.credits_img);
             this.credits.Cursor = System.Windows.Forms.Cursors.Hand;
             this.credits.ForeColor = System.Drawing.Color.White;
-            this.credits.Location = new System.Drawing.Point(4, 25);
+            this.credits.Location = new System.Drawing.Point(4, 30);
             this.credits.Name = "credits";
-            this.credits.Size = new System.Drawing.Size(1280, 701);
+            this.credits.Size = new System.Drawing.Size(1280, 696);
             this.credits.TabIndex = 3;
             this.credits.Text = "credits";
             // 
@@ -270,7 +270,7 @@ namespace hangmanGame_t3_indes
             this.credits_title.Font = new System.Drawing.Font("Montserrat", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.credits_title.Location = new System.Drawing.Point(134, 37);
             this.credits_title.Name = "credits_title";
-            this.credits_title.Size = new System.Drawing.Size(185, 50);
+            this.credits_title.Size = new System.Drawing.Size(232, 62);
             this.credits_title.TabIndex = 7;
             this.credits_title.Text = "CREDITS";
             // 
@@ -314,9 +314,9 @@ namespace hangmanGame_t3_indes
             this.rules.Controls.Add(this.rules_backBtn);
             this.rules.Controls.Add(this.rules_img);
             this.rules.ForeColor = System.Drawing.Color.White;
-            this.rules.Location = new System.Drawing.Point(4, 25);
+            this.rules.Location = new System.Drawing.Point(4, 30);
             this.rules.Name = "rules";
-            this.rules.Size = new System.Drawing.Size(1280, 701);
+            this.rules.Size = new System.Drawing.Size(1280, 696);
             this.rules.TabIndex = 2;
             this.rules.Text = "rules";
             // 
@@ -326,7 +326,7 @@ namespace hangmanGame_t3_indes
             this.rules_title.Font = new System.Drawing.Font("Montserrat", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rules_title.Location = new System.Drawing.Point(137, 39);
             this.rules_title.Name = "rules_title";
-            this.rules_title.Size = new System.Drawing.Size(145, 50);
+            this.rules_title.Size = new System.Drawing.Size(181, 62);
             this.rules_title.TabIndex = 3;
             this.rules_title.Text = "RULES";
             // 
@@ -377,9 +377,9 @@ namespace hangmanGame_t3_indes
             this.enterName.Controls.Add(this.enterName_gameLogo);
             this.enterName.Controls.Add(this.enterName_backBtn);
             this.enterName.ForeColor = System.Drawing.Color.White;
-            this.enterName.Location = new System.Drawing.Point(4, 25);
+            this.enterName.Location = new System.Drawing.Point(4, 30);
             this.enterName.Name = "enterName";
-            this.enterName.Size = new System.Drawing.Size(1280, 701);
+            this.enterName.Size = new System.Drawing.Size(1280, 696);
             this.enterName.TabIndex = 1;
             this.enterName.Text = "enterName";
             // 
@@ -389,7 +389,7 @@ namespace hangmanGame_t3_indes
             this.enterName_radioBtn3.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.enterName_radioBtn3.Location = new System.Drawing.Point(690, 431);
             this.enterName_radioBtn3.Name = "enterName_radioBtn3";
-            this.enterName_radioBtn3.Size = new System.Drawing.Size(48, 31);
+            this.enterName_radioBtn3.Size = new System.Drawing.Size(59, 39);
             this.enterName_radioBtn3.TabIndex = 17;
             this.enterName_radioBtn3.Text = "15";
             this.enterName_radioBtn3.UseVisualStyleBackColor = true;
@@ -401,7 +401,7 @@ namespace hangmanGame_t3_indes
             this.enterName_radioBtn2.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.enterName_radioBtn2.Location = new System.Drawing.Point(616, 431);
             this.enterName_radioBtn2.Name = "enterName_radioBtn2";
-            this.enterName_radioBtn2.Size = new System.Drawing.Size(50, 31);
+            this.enterName_radioBtn2.Size = new System.Drawing.Size(62, 39);
             this.enterName_radioBtn2.TabIndex = 16;
             this.enterName_radioBtn2.TabStop = true;
             this.enterName_radioBtn2.Text = "10";
@@ -413,7 +413,7 @@ namespace hangmanGame_t3_indes
             this.enterName_radioBtn1.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.enterName_radioBtn1.Location = new System.Drawing.Point(545, 431);
             this.enterName_radioBtn1.Name = "enterName_radioBtn1";
-            this.enterName_radioBtn1.Size = new System.Drawing.Size(41, 31);
+            this.enterName_radioBtn1.Size = new System.Drawing.Size(50, 39);
             this.enterName_radioBtn1.TabIndex = 15;
             this.enterName_radioBtn1.Text = "5";
             this.enterName_radioBtn1.UseVisualStyleBackColor = true;
@@ -435,7 +435,7 @@ namespace hangmanGame_t3_indes
             this.enterName_input.Location = new System.Drawing.Point(469, 278);
             this.enterName_input.MinimumSize = new System.Drawing.Size(4, 40);
             this.enterName_input.Name = "enterName_input";
-            this.enterName_input.Size = new System.Drawing.Size(330, 27);
+            this.enterName_input.Size = new System.Drawing.Size(330, 32);
             this.enterName_input.TabIndex = 13;
             // 
             // enterName_nameLabel
@@ -468,7 +468,7 @@ namespace hangmanGame_t3_indes
             this.enterName_title.Font = new System.Drawing.Font("Montserrat", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.enterName_title.Location = new System.Drawing.Point(135, 37);
             this.enterName_title.Name = "enterName_title";
-            this.enterName_title.Size = new System.Drawing.Size(120, 50);
+            this.enterName_title.Size = new System.Drawing.Size(149, 62);
             this.enterName_title.TabIndex = 10;
             this.enterName_title.Text = "PLAY";
             // 
@@ -539,9 +539,9 @@ namespace hangmanGame_t3_indes
             this.play.Controls.Add(this.play_currentLevel);
             this.play.Controls.Add(this.play_wordLabel);
             this.play.ForeColor = System.Drawing.Color.White;
-            this.play.Location = new System.Drawing.Point(4, 25);
+            this.play.Location = new System.Drawing.Point(4, 30);
             this.play.Name = "play";
-            this.play.Size = new System.Drawing.Size(1280, 701);
+            this.play.Size = new System.Drawing.Size(1280, 696);
             this.play.TabIndex = 4;
             this.play.Text = "playArea";
             // 
@@ -654,7 +654,7 @@ namespace hangmanGame_t3_indes
             this.letterMBtn.TabIndex = 42;
             this.letterMBtn.Text = "M";
             this.letterMBtn.UseVisualStyleBackColor = true;
-            this.letterMBtn.Click += new System.EventHandler(this.letterMBtn_Click);
+            this.letterMBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterNBtn
             // 
@@ -667,7 +667,7 @@ namespace hangmanGame_t3_indes
             this.letterNBtn.TabIndex = 41;
             this.letterNBtn.Text = "N";
             this.letterNBtn.UseVisualStyleBackColor = true;
-            this.letterNBtn.Click += new System.EventHandler(this.letterNBtn_Click);
+            this.letterNBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterBBtn
             // 
@@ -681,7 +681,7 @@ namespace hangmanGame_t3_indes
             this.letterBBtn.TabIndex = 40;
             this.letterBBtn.Text = "B";
             this.letterBBtn.UseVisualStyleBackColor = true;
-            this.letterBBtn.Click += new System.EventHandler(this.letterBBtn_Click);
+            this.letterBBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterVBtn
             // 
@@ -694,7 +694,7 @@ namespace hangmanGame_t3_indes
             this.letterVBtn.TabIndex = 39;
             this.letterVBtn.Text = "V";
             this.letterVBtn.UseVisualStyleBackColor = true;
-            this.letterVBtn.Click += new System.EventHandler(this.letterVBtn_Click);
+            this.letterVBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterCBtn
             // 
@@ -707,7 +707,7 @@ namespace hangmanGame_t3_indes
             this.letterCBtn.TabIndex = 38;
             this.letterCBtn.Text = "C";
             this.letterCBtn.UseVisualStyleBackColor = true;
-            this.letterCBtn.Click += new System.EventHandler(this.letterCBtn_Click);
+            this.letterCBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterXBtn
             // 
@@ -720,7 +720,7 @@ namespace hangmanGame_t3_indes
             this.letterXBtn.TabIndex = 37;
             this.letterXBtn.Text = "X";
             this.letterXBtn.UseVisualStyleBackColor = true;
-            this.letterXBtn.Click += new System.EventHandler(this.letterXBtn_Click);
+            this.letterXBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterZBtn
             // 
@@ -733,7 +733,7 @@ namespace hangmanGame_t3_indes
             this.letterZBtn.TabIndex = 36;
             this.letterZBtn.Text = "Z";
             this.letterZBtn.UseVisualStyleBackColor = true;
-            this.letterZBtn.Click += new System.EventHandler(this.letterZBtn_Click);
+            this.letterZBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterLBtn
             // 
@@ -746,7 +746,7 @@ namespace hangmanGame_t3_indes
             this.letterLBtn.TabIndex = 34;
             this.letterLBtn.Text = "L";
             this.letterLBtn.UseVisualStyleBackColor = true;
-            this.letterLBtn.Click += new System.EventHandler(this.letterLBtn_Click);
+            this.letterLBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterKBtn
             // 
@@ -759,7 +759,7 @@ namespace hangmanGame_t3_indes
             this.letterKBtn.TabIndex = 33;
             this.letterKBtn.Text = "K";
             this.letterKBtn.UseVisualStyleBackColor = true;
-            this.letterKBtn.Click += new System.EventHandler(this.letterKBtn_Click);
+            this.letterKBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterJBtn
             // 
@@ -773,7 +773,7 @@ namespace hangmanGame_t3_indes
             this.letterJBtn.TabIndex = 32;
             this.letterJBtn.Text = "J";
             this.letterJBtn.UseVisualStyleBackColor = true;
-            this.letterJBtn.Click += new System.EventHandler(this.letterJBtn_Click);
+            this.letterJBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterHBtn
             // 
@@ -786,7 +786,7 @@ namespace hangmanGame_t3_indes
             this.letterHBtn.TabIndex = 31;
             this.letterHBtn.Text = "H";
             this.letterHBtn.UseVisualStyleBackColor = true;
-            this.letterHBtn.Click += new System.EventHandler(this.letterHBtn_Click);
+            this.letterHBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterGBtn
             // 
@@ -799,7 +799,7 @@ namespace hangmanGame_t3_indes
             this.letterGBtn.TabIndex = 30;
             this.letterGBtn.Text = "G";
             this.letterGBtn.UseVisualStyleBackColor = true;
-            this.letterGBtn.Click += new System.EventHandler(this.letterGBtn_Click);
+            this.letterGBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterFBtn
             // 
@@ -812,7 +812,7 @@ namespace hangmanGame_t3_indes
             this.letterFBtn.TabIndex = 29;
             this.letterFBtn.Text = "F";
             this.letterFBtn.UseVisualStyleBackColor = true;
-            this.letterFBtn.Click += new System.EventHandler(this.letterFBtn_Click);
+            this.letterFBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterDBtn
             // 
@@ -825,7 +825,7 @@ namespace hangmanGame_t3_indes
             this.letterDBtn.TabIndex = 28;
             this.letterDBtn.Text = "D";
             this.letterDBtn.UseVisualStyleBackColor = true;
-            this.letterDBtn.Click += new System.EventHandler(this.letterDBtn_Click);
+            this.letterDBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterSBtn
             // 
@@ -838,7 +838,7 @@ namespace hangmanGame_t3_indes
             this.letterSBtn.TabIndex = 27;
             this.letterSBtn.Text = "S";
             this.letterSBtn.UseVisualStyleBackColor = true;
-            this.letterSBtn.Click += new System.EventHandler(this.letterSBtn_Click);
+            this.letterSBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterABtn
             // 
@@ -851,7 +851,7 @@ namespace hangmanGame_t3_indes
             this.letterABtn.TabIndex = 26;
             this.letterABtn.Text = "A";
             this.letterABtn.UseVisualStyleBackColor = true;
-            this.letterABtn.Click += new System.EventHandler(this.letterABtn_Click);
+            this.letterABtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterPBtn
             // 
@@ -864,7 +864,7 @@ namespace hangmanGame_t3_indes
             this.letterPBtn.TabIndex = 25;
             this.letterPBtn.Text = "P";
             this.letterPBtn.UseVisualStyleBackColor = true;
-            this.letterPBtn.Click += new System.EventHandler(this.letterPBtn_Click);
+            this.letterPBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterOBtn
             // 
@@ -877,7 +877,7 @@ namespace hangmanGame_t3_indes
             this.letterOBtn.TabIndex = 24;
             this.letterOBtn.Text = "O";
             this.letterOBtn.UseVisualStyleBackColor = true;
-            this.letterOBtn.Click += new System.EventHandler(this.letterOBtn_Click);
+            this.letterOBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterIBtn
             // 
@@ -890,7 +890,7 @@ namespace hangmanGame_t3_indes
             this.letterIBtn.TabIndex = 23;
             this.letterIBtn.Text = "I";
             this.letterIBtn.UseVisualStyleBackColor = true;
-            this.letterIBtn.Click += new System.EventHandler(this.letterIBtn_Click);
+            this.letterIBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterUBtn
             // 
@@ -903,7 +903,7 @@ namespace hangmanGame_t3_indes
             this.letterUBtn.TabIndex = 22;
             this.letterUBtn.Text = "U";
             this.letterUBtn.UseVisualStyleBackColor = true;
-            this.letterUBtn.Click += new System.EventHandler(this.letterUBtn_Click);
+            this.letterUBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterYBtn
             // 
@@ -916,7 +916,7 @@ namespace hangmanGame_t3_indes
             this.letterYBtn.TabIndex = 21;
             this.letterYBtn.Text = "Y";
             this.letterYBtn.UseVisualStyleBackColor = true;
-            this.letterYBtn.Click += new System.EventHandler(this.letterYBtn_Click);
+            this.letterYBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterTBtn
             // 
@@ -929,7 +929,7 @@ namespace hangmanGame_t3_indes
             this.letterTBtn.TabIndex = 20;
             this.letterTBtn.Text = "T";
             this.letterTBtn.UseVisualStyleBackColor = true;
-            this.letterTBtn.Click += new System.EventHandler(this.letterTBtn_Click);
+            this.letterTBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterRBtn
             // 
@@ -942,7 +942,7 @@ namespace hangmanGame_t3_indes
             this.letterRBtn.TabIndex = 19;
             this.letterRBtn.Text = "R";
             this.letterRBtn.UseVisualStyleBackColor = true;
-            this.letterRBtn.Click += new System.EventHandler(this.letterRBtn_Click);
+            this.letterRBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterEBtn
             // 
@@ -955,7 +955,7 @@ namespace hangmanGame_t3_indes
             this.letterEBtn.TabIndex = 18;
             this.letterEBtn.Text = "E";
             this.letterEBtn.UseVisualStyleBackColor = true;
-            this.letterEBtn.Click += new System.EventHandler(this.letterEBtn_Click);
+            this.letterEBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterWBtn
             // 
@@ -968,7 +968,7 @@ namespace hangmanGame_t3_indes
             this.letterWBtn.TabIndex = 17;
             this.letterWBtn.Text = "W";
             this.letterWBtn.UseVisualStyleBackColor = true;
-            this.letterWBtn.Click += new System.EventHandler(this.letterWBtn_Click);
+            this.letterWBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // letterQBtn
             // 
@@ -981,7 +981,7 @@ namespace hangmanGame_t3_indes
             this.letterQBtn.TabIndex = 16;
             this.letterQBtn.Text = "Q";
             this.letterQBtn.UseVisualStyleBackColor = true;
-            this.letterQBtn.Click += new System.EventHandler(this.letterQBtn_Click);
+            this.letterQBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
             // play_hangman
             // 
@@ -1070,9 +1070,9 @@ namespace hangmanGame_t3_indes
             this.highScores.Controls.Add(this.highScores_gameLogo);
             this.highScores.Controls.Add(this.highScores_backBtn);
             this.highScores.ForeColor = System.Drawing.Color.White;
-            this.highScores.Location = new System.Drawing.Point(4, 25);
+            this.highScores.Location = new System.Drawing.Point(4, 30);
             this.highScores.Name = "highScores";
-            this.highScores.Size = new System.Drawing.Size(1280, 701);
+            this.highScores.Size = new System.Drawing.Size(1280, 696);
             this.highScores.TabIndex = 5;
             this.highScores.Text = "highScores";
             // 
@@ -1257,7 +1257,7 @@ namespace hangmanGame_t3_indes
             this.highScores_title.Font = new System.Drawing.Font("Montserrat", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.highScores_title.Location = new System.Drawing.Point(138, 36);
             this.highScores_title.Name = "highScores_title";
-            this.highScores_title.Size = new System.Drawing.Size(284, 50);
+            this.highScores_title.Size = new System.Drawing.Size(356, 62);
             this.highScores_title.TabIndex = 10;
             this.highScores_title.Text = "HIGH-SCORES";
             // 
@@ -1286,7 +1286,7 @@ namespace hangmanGame_t3_indes
             // 
             // hangman
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(36)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
