@@ -162,9 +162,9 @@ namespace hangmanGame_t3_indes
             this.welcome.Controls.Add(this.welcome_gameTitle);
             this.welcome.Controls.Add(this.welcome_gameLogo);
             this.welcome.ForeColor = System.Drawing.Color.White;
-            this.welcome.Location = new System.Drawing.Point(4, 30);
+            this.welcome.Location = new System.Drawing.Point(4, 25);
             this.welcome.Name = "welcome";
-            this.welcome.Size = new System.Drawing.Size(1280, 696);
+            this.welcome.Size = new System.Drawing.Size(1280, 701);
             this.welcome.TabIndex = 0;
             this.welcome.Text = "welcome";
             // 
@@ -258,9 +258,9 @@ namespace hangmanGame_t3_indes
             this.credits.Controls.Add(this.credits_img);
             this.credits.Cursor = System.Windows.Forms.Cursors.Hand;
             this.credits.ForeColor = System.Drawing.Color.White;
-            this.credits.Location = new System.Drawing.Point(4, 30);
+            this.credits.Location = new System.Drawing.Point(4, 25);
             this.credits.Name = "credits";
-            this.credits.Size = new System.Drawing.Size(1280, 696);
+            this.credits.Size = new System.Drawing.Size(1280, 701);
             this.credits.TabIndex = 3;
             this.credits.Text = "credits";
             // 
@@ -270,7 +270,7 @@ namespace hangmanGame_t3_indes
             this.credits_title.Font = new System.Drawing.Font("Montserrat", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.credits_title.Location = new System.Drawing.Point(134, 37);
             this.credits_title.Name = "credits_title";
-            this.credits_title.Size = new System.Drawing.Size(232, 62);
+            this.credits_title.Size = new System.Drawing.Size(185, 50);
             this.credits_title.TabIndex = 7;
             this.credits_title.Text = "CREDITS";
             // 
@@ -314,9 +314,9 @@ namespace hangmanGame_t3_indes
             this.rules.Controls.Add(this.rules_backBtn);
             this.rules.Controls.Add(this.rules_img);
             this.rules.ForeColor = System.Drawing.Color.White;
-            this.rules.Location = new System.Drawing.Point(4, 30);
+            this.rules.Location = new System.Drawing.Point(4, 25);
             this.rules.Name = "rules";
-            this.rules.Size = new System.Drawing.Size(1280, 696);
+            this.rules.Size = new System.Drawing.Size(1280, 701);
             this.rules.TabIndex = 2;
             this.rules.Text = "rules";
             // 
@@ -326,7 +326,7 @@ namespace hangmanGame_t3_indes
             this.rules_title.Font = new System.Drawing.Font("Montserrat", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rules_title.Location = new System.Drawing.Point(137, 39);
             this.rules_title.Name = "rules_title";
-            this.rules_title.Size = new System.Drawing.Size(181, 62);
+            this.rules_title.Size = new System.Drawing.Size(145, 50);
             this.rules_title.TabIndex = 3;
             this.rules_title.Text = "RULES";
             // 
@@ -377,9 +377,9 @@ namespace hangmanGame_t3_indes
             this.enterName.Controls.Add(this.enterName_gameLogo);
             this.enterName.Controls.Add(this.enterName_backBtn);
             this.enterName.ForeColor = System.Drawing.Color.White;
-            this.enterName.Location = new System.Drawing.Point(4, 30);
+            this.enterName.Location = new System.Drawing.Point(4, 25);
             this.enterName.Name = "enterName";
-            this.enterName.Size = new System.Drawing.Size(1280, 696);
+            this.enterName.Size = new System.Drawing.Size(1280, 701);
             this.enterName.TabIndex = 1;
             this.enterName.Text = "enterName";
             // 
@@ -389,7 +389,7 @@ namespace hangmanGame_t3_indes
             this.enterName_radioBtn3.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.enterName_radioBtn3.Location = new System.Drawing.Point(690, 431);
             this.enterName_radioBtn3.Name = "enterName_radioBtn3";
-            this.enterName_radioBtn3.Size = new System.Drawing.Size(59, 39);
+            this.enterName_radioBtn3.Size = new System.Drawing.Size(48, 31);
             this.enterName_radioBtn3.TabIndex = 17;
             this.enterName_radioBtn3.Text = "15";
             this.enterName_radioBtn3.UseVisualStyleBackColor = true;
@@ -401,7 +401,7 @@ namespace hangmanGame_t3_indes
             this.enterName_radioBtn2.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.enterName_radioBtn2.Location = new System.Drawing.Point(616, 431);
             this.enterName_radioBtn2.Name = "enterName_radioBtn2";
-            this.enterName_radioBtn2.Size = new System.Drawing.Size(62, 39);
+            this.enterName_radioBtn2.Size = new System.Drawing.Size(50, 31);
             this.enterName_radioBtn2.TabIndex = 16;
             this.enterName_radioBtn2.TabStop = true;
             this.enterName_radioBtn2.Text = "10";
@@ -413,7 +413,7 @@ namespace hangmanGame_t3_indes
             this.enterName_radioBtn1.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.enterName_radioBtn1.Location = new System.Drawing.Point(545, 431);
             this.enterName_radioBtn1.Name = "enterName_radioBtn1";
-            this.enterName_radioBtn1.Size = new System.Drawing.Size(50, 39);
+            this.enterName_radioBtn1.Size = new System.Drawing.Size(41, 31);
             this.enterName_radioBtn1.TabIndex = 15;
             this.enterName_radioBtn1.Text = "5";
             this.enterName_radioBtn1.UseVisualStyleBackColor = true;
@@ -435,7 +435,7 @@ namespace hangmanGame_t3_indes
             this.enterName_input.Location = new System.Drawing.Point(469, 278);
             this.enterName_input.MinimumSize = new System.Drawing.Size(4, 40);
             this.enterName_input.Name = "enterName_input";
-            this.enterName_input.Size = new System.Drawing.Size(330, 32);
+            this.enterName_input.Size = new System.Drawing.Size(330, 27);
             this.enterName_input.TabIndex = 13;
             // 
             // enterName_nameLabel
@@ -468,7 +468,7 @@ namespace hangmanGame_t3_indes
             this.enterName_title.Font = new System.Drawing.Font("Montserrat", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.enterName_title.Location = new System.Drawing.Point(135, 37);
             this.enterName_title.Name = "enterName_title";
-            this.enterName_title.Size = new System.Drawing.Size(149, 62);
+            this.enterName_title.Size = new System.Drawing.Size(120, 50);
             this.enterName_title.TabIndex = 10;
             this.enterName_title.Text = "PLAY";
             // 
@@ -539,9 +539,9 @@ namespace hangmanGame_t3_indes
             this.play.Controls.Add(this.play_currentLevel);
             this.play.Controls.Add(this.play_wordLabel);
             this.play.ForeColor = System.Drawing.Color.White;
-            this.play.Location = new System.Drawing.Point(4, 30);
+            this.play.Location = new System.Drawing.Point(4, 25);
             this.play.Name = "play";
-            this.play.Size = new System.Drawing.Size(1280, 696);
+            this.play.Size = new System.Drawing.Size(1280, 701);
             this.play.TabIndex = 4;
             this.play.Text = "playArea";
             // 
@@ -1004,6 +1004,7 @@ namespace hangmanGame_t3_indes
             this.play_word.TabIndex = 14;
             this.play_word.Text = "r h i n o c e r o s";
             this.play_word.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.play_word.Visible = false;
             // 
             // play_letterDashes
             // 
@@ -1014,6 +1015,7 @@ namespace hangmanGame_t3_indes
             this.play_letterDashes.TabIndex = 13;
             this.play_letterDashes.Text = "_ _ _ _ _ _ _ _ _ _";
             this.play_letterDashes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.play_letterDashes.Visible = false;
             // 
             // play_divider
             // 
@@ -1070,9 +1072,9 @@ namespace hangmanGame_t3_indes
             this.highScores.Controls.Add(this.highScores_gameLogo);
             this.highScores.Controls.Add(this.highScores_backBtn);
             this.highScores.ForeColor = System.Drawing.Color.White;
-            this.highScores.Location = new System.Drawing.Point(4, 30);
+            this.highScores.Location = new System.Drawing.Point(4, 25);
             this.highScores.Name = "highScores";
-            this.highScores.Size = new System.Drawing.Size(1280, 696);
+            this.highScores.Size = new System.Drawing.Size(1280, 701);
             this.highScores.TabIndex = 5;
             this.highScores.Text = "highScores";
             // 
@@ -1257,7 +1259,7 @@ namespace hangmanGame_t3_indes
             this.highScores_title.Font = new System.Drawing.Font("Montserrat", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.highScores_title.Location = new System.Drawing.Point(138, 36);
             this.highScores_title.Name = "highScores_title";
-            this.highScores_title.Size = new System.Drawing.Size(356, 62);
+            this.highScores_title.Size = new System.Drawing.Size(284, 50);
             this.highScores_title.TabIndex = 10;
             this.highScores_title.Text = "HIGH-SCORES";
             // 
@@ -1286,7 +1288,7 @@ namespace hangmanGame_t3_indes
             // 
             // hangman
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(36)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
