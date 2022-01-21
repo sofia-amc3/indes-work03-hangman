@@ -12,6 +12,7 @@ using System.Text.Json.Serialization;
 using System.IO;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using System.Threading;
 
 namespace hangmanGame_t3_indes
 {
@@ -28,9 +29,10 @@ namespace hangmanGame_t3_indes
         int totalLevels;
         Item chosenWord;
         List<string> devidedWord;
-        List<Item> alreadyUsedLetters = new List<Item>();
+        List<Item> alreadyUsedWords = new List<Item>();
         List<Button> clickedButtons = new List<Button>();
-        List<String> revealedLetters = new List<String>();
+        List<string> revealedLetters = new List<string>();
+        List<Label> labelsToRemove = new List<Label>();
         int numLettersDiscovered = 0;
         int hangmanStage = 0;
 
@@ -197,13 +199,15 @@ namespace hangmanGame_t3_indes
             btn.BackColor = backgroundUsed;
             btn.ForeColor = foregroundUsed;
 
-            RegisterLetter(btn.Text);
+            RegisterLetter(btn.Text.ToLower());
         }
 
         private void RegisterLetter(string letter)
         {
             if (devidedWord.Contains(letter))
             {
+                score = score + 5;
+                UpdateScore();
                 revealedLetters.Add(letter);
                 int counter = 0;
                 // Guessed a letter - reveal the letters from the word
@@ -213,36 +217,43 @@ namespace hangmanGame_t3_indes
                     {
                         // Player found a letter!
                         numLettersDiscovered++;
+                        
                         // Show letter - Create label at the correct position and fill it with the letter
                         if (devidedWord.Count % 2 == 0)
                         {
-                            // First pos = 373 - (((devidedWord.Count - 2) / 2) * 30) (space between letters)
-                            int pos = 373 - (((devidedWord.Count - 2) / 2) * 30);
-                            pos = pos + 30 * counter;
-                            Label blankSpace = new Label();
-                            blankSpace.Text = letter;
-                            blankSpace.Name = "";
-                            blankSpace.ForeColor = Color.White;
-                            blankSpace.AutoSize = true;
-                            blankSpace.TextAlign = ContentAlignment.MiddleCenter;
-                            blankSpace.Location = new Point(pos, 150);
-                            blankSpace.Font = new Font("Montserrat", 39);
-                            play.Controls.Add(blankSpace);
+                            // First pos = 368 - (((devidedWord.Count - 2) / 2) * 30) (space between letters)
+                            int pos = 368 - (((devidedWord.Count - 2) / 2) * 50);
+                            pos = pos + 50 * counter;
+                            Label wordSpace = new Label();
+                            wordSpace.Text = letter;
+                            wordSpace.Name = "";
+                            wordSpace.ForeColor = Color.White;
+                            wordSpace.AutoSize = true;
+                            wordSpace.TextAlign = ContentAlignment.MiddleCenter;
+                            wordSpace.Location = new Point(pos, 160);
+                            wordSpace.Font = new Font("Montserrat", 39);
+                            play.Controls.Add(wordSpace);
+                            wordSpace.BringToFront();
+
+                            labelsToRemove.Add(wordSpace);
                         }
                         else
                         {
-                            // First pos = 403 - (((devidedWord.Count - 1) / 2) * 30) (space between letters)
-                            int pos = 403 - ((devidedWord.Count - 1) / 2) * 30;
-                            pos = pos + 30 * counter;
-                            Label blankSpace = new Label();
-                            blankSpace.Text = letter;
-                            blankSpace.Name = "";
-                            blankSpace.ForeColor = Color.White;
-                            blankSpace.AutoSize = true;
-                            blankSpace.TextAlign = ContentAlignment.MiddleCenter;
-                            blankSpace.Location = new Point(pos, 150);
-                            blankSpace.Font = new Font("Montserrat", 39);
-                            play.Controls.Add(blankSpace);
+                            // First pos = 393 - (((devidedWord.Count - 1) / 2) * 50) (space between letters)
+                            int pos = 393 - ((devidedWord.Count - 1) / 2) * 50;
+                            pos = pos + 50 * counter;
+                            Label wordSpace = new Label();
+                            wordSpace.Text = letter;
+                            wordSpace.Name = "";
+                            wordSpace.ForeColor = Color.White;
+                            wordSpace.AutoSize = true;
+                            wordSpace.TextAlign = ContentAlignment.MiddleCenter;
+                            wordSpace.Location = new Point(pos, 160);
+                            wordSpace.Font = new Font("Montserrat", 39);
+                            play.Controls.Add(wordSpace);
+                            wordSpace.BringToFront();
+
+                            labelsToRemove.Add(wordSpace);
                         }
                     }
                     counter++;
@@ -254,6 +265,8 @@ namespace hangmanGame_t3_indes
             else
             {
                 // Player did not get a letter right - Punish them!
+                score = score - 5;
+                UpdateScore();
                 AdvanceHangman();
             }
         }
@@ -265,27 +278,27 @@ namespace hangmanGame_t3_indes
             // Change image depending on the stage!
             switch (hangmanStage) {
                 case 1:
-
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-02.png", true);
                     break;
 
                 case 2:
-
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-03.png", true);
                     break;
 
                 case 3:
-
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-04.png", true);
                     break;
 
                 case 4:
-
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-05.png", true);
                     break;
 
                 case 5:
-
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-06.png", true);
                     break;
 
                 case 6:
-
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-07.png", true);
                     break;
             }
 
@@ -294,27 +307,53 @@ namespace hangmanGame_t3_indes
             CheckIfLost();
         }
 
-        private void CheckIfWon()
+        private async void CheckIfWon()
         {
             // The player WINS when numDiscoveredLetters = devidedWord.Count
             if (numLettersDiscovered == devidedWord.Count)
             {
-                // Disable all the buttons!
-                // When the player wins, move him to a win screen, and reset the buttons' appearances so they are not greyed out
-                ResetButtons();
+                // Disable all the buttons! TODO
+                score = score + 50;
+                UpdateScore();
+
+                await Task.Delay(2000);
+                ShowWinPopUp();
+
+                await Task.Delay(3000);
+                // Go to next level TODO
             }
         }
 
-        private void CheckIfLost()
+        private async void CheckIfLost()
         {
             // The player LOSES when hangmanStage = 6 (full image)
             if (hangmanStage == 6)
             {
-                // Disable all the buttons!
+                // Disable all the buttons! TODO
+                score = score - 50;
+                UpdateScore();
+
+                await Task.Delay(2000);
                 // Show the full word
-                // When the player loses, move him to a lose screen, and reset the buttons' appearances so they are not greyed out
+                RevealWord();
+
+                await Task.Delay(2000);
+                ShowLosePopUp();
+
+                await Task.Delay(3000);
+                // Go to next level TODO
                 ResetButtons();
             }
+        }
+
+        private void ShowWinPopUp()
+        {
+
+        }
+
+        private void ShowLosePopUp()
+        {
+
         }
 
         private void ResetButtons()
@@ -324,6 +363,59 @@ namespace hangmanGame_t3_indes
                 btn.Enabled = true;
                 btn.ForeColor = Color.White;
                 btn.BackColor = backgroundOriginal;
+            }
+        }
+
+        private void UpdateScore()
+        {
+            play_score.Text = score.ToString();
+        }
+
+        private void RevealWord()
+        {
+            int counter = 0;
+            foreach (string letter in devidedWord)
+            {
+                if (!revealedLetters.Contains(letter))
+                {
+                    if (devidedWord.Count % 2 == 0)
+                    {
+                        // First pos = 368 - (((devidedWord.Count - 2) / 2) * 30) (space between letters)
+                        int pos = 368 - (((devidedWord.Count - 2) / 2) * 50);
+                        pos = pos + 50 * counter;
+                        Label wordSpace = new Label();
+                        wordSpace.Text = letter;
+                        wordSpace.Name = "";
+                        wordSpace.ForeColor = Color.White;
+                        wordSpace.AutoSize = true;
+                        wordSpace.TextAlign = ContentAlignment.MiddleCenter;
+                        wordSpace.Location = new Point(pos, 160);
+                        wordSpace.Font = new Font("Montserrat", 39);
+                        play.Controls.Add(wordSpace);
+                        wordSpace.BringToFront();
+
+                        labelsToRemove.Add(wordSpace);
+                    }
+                    else
+                    {
+                        // First pos = 393 - (((devidedWord.Count - 1) / 2) * 50) (space between letters)
+                        int pos = 393 - ((devidedWord.Count - 1) / 2) * 50;
+                        pos = pos + 50 * counter;
+                        Label wordSpace = new Label();
+                        wordSpace.Text = letter;
+                        wordSpace.Name = "";
+                        wordSpace.ForeColor = Color.White;
+                        wordSpace.AutoSize = true;
+                        wordSpace.TextAlign = ContentAlignment.MiddleCenter;
+                        wordSpace.Location = new Point(pos, 160);
+                        wordSpace.Font = new Font("Montserrat", 39);
+                        play.Controls.Add(wordSpace);
+                        wordSpace.BringToFront();
+
+                        labelsToRemove.Add(wordSpace);
+                    }
+                }
+                counter++;
             }
         }
 
@@ -347,8 +439,29 @@ namespace hangmanGame_t3_indes
 
         private void displayGame()
         {
+            // Clear previous labels
+            foreach (Label label in labelsToRemove)
+            {
+                play.Controls.Remove(label);
+            }
+
+            // Reset number of fails
+            hangmanStage = 0;
+
+            // Reset hangman image
+            play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-01.png", true);
+
+            // Reset letters guessed
+            revealedLetters.Clear();
+            numLettersDiscovered = 0;
+
+            // Reset Buttons
+            ResetButtons();
+            clickedButtons.Clear();
+
+
             play_currentLevel.Text = "Level " + currentLevel + "/" + totalLevels;
-            play_score.Text = score.ToString();
+            UpdateScore();
 
             //Generate word for 5 levels
             if (totalLevels == 5) { // if palyer chose 5 levels 
@@ -453,7 +566,7 @@ namespace hangmanGame_t3_indes
             {
 
                 //Add only the easy difficulty words
-                if (wordList[i].difficulty == "easy" && !alreadyUsedLetters.Contains(wordList[i]))
+                if (wordList[i].difficulty == "easy" && !alreadyUsedWords.Contains(wordList[i]))
                 {
 
                     //Add word to new list
@@ -465,7 +578,7 @@ namespace hangmanGame_t3_indes
 
             Random rnd = new Random();
             chosenWord = items[rnd.Next(0, items.Count)];
-            alreadyUsedLetters.Add(chosenWord);
+            alreadyUsedWords.Add(chosenWord);
             devidedWord = SeparateWord(chosenWord.name);
             
             string playWord = "";
@@ -504,7 +617,7 @@ namespace hangmanGame_t3_indes
             {
 
                 //Add only the average difficulty words
-                if (wordList[i].difficulty == "average" && !alreadyUsedLetters.Contains(wordList[i]))
+                if (wordList[i].difficulty == "average" && !alreadyUsedWords.Contains(wordList[i]))
                 {
 
                     //Add word to new list
@@ -519,7 +632,7 @@ namespace hangmanGame_t3_indes
             chosenWord = items[rnd.Next(0, items.Count)];
 
             //Add chosen word to already used words, so tht it's not picked again
-            alreadyUsedLetters.Add(chosenWord);
+            alreadyUsedWords.Add(chosenWord);
 
             //Splite the word in to list
             devidedWord = SeparateWord(chosenWord.name);
@@ -564,9 +677,29 @@ namespace hangmanGame_t3_indes
                 blankSpace.ForeColor = Color.White;
                 blankSpace.AutoSize = true;
                 blankSpace.TextAlign = ContentAlignment.MiddleCenter;
-                blankSpace.Location = new Point(373, 174);
+                blankSpace.Location = new Point(368, 174);
                 blankSpace.Font = new Font("Montserrat", 43);
                 play.Controls.Add(blankSpace);
+
+                labelsToRemove.Add(blankSpace);
+
+                int pos = 368;
+
+                for (int i = 0; i < (word.Length - 2) / 2; i++)
+                {
+                    pos = pos - 50;
+                    Label blankSpace3 = new Label();
+                    blankSpace3.Text = "_";
+                    blankSpace3.Name = "";
+                    blankSpace3.ForeColor = Color.White;
+                    blankSpace3.AutoSize = true;
+                    blankSpace3.TextAlign = ContentAlignment.MiddleCenter;
+                    blankSpace3.Location = new Point(pos, 174);
+                    blankSpace3.Font = new Font("Montserrat", 43);
+                    play.Controls.Add(blankSpace3);
+
+                    labelsToRemove.Add(blankSpace3);
+                }
 
                 Label blankSpace2 = new Label();
                 blankSpace2.Text = "_";
@@ -574,9 +707,29 @@ namespace hangmanGame_t3_indes
                 blankSpace2.ForeColor = Color.White;
                 blankSpace2.AutoSize = true;
                 blankSpace2.TextAlign = ContentAlignment.MiddleCenter;
-                blankSpace2.Location = new Point(433, 174);
+                blankSpace2.Location = new Point(418, 174);
                 blankSpace2.Font = new Font("Montserrat", 43);
                 play.Controls.Add(blankSpace2);
+
+                labelsToRemove.Add(blankSpace2);
+
+                int pos2 = 418;
+
+                for (int i = 0; i < (word.Length - 2) / 2; i++)
+                {
+                    pos2 = pos2 + 50;
+                    Label blankSpace3 = new Label();
+                    blankSpace3.Text = "_";
+                    blankSpace3.Name = "";
+                    blankSpace3.ForeColor = Color.White;
+                    blankSpace3.AutoSize = true;
+                    blankSpace3.TextAlign = ContentAlignment.MiddleCenter;
+                    blankSpace3.Location = new Point(pos2, 174);
+                    blankSpace3.Font = new Font("Montserrat", 43);
+                    play.Controls.Add(blankSpace3);
+
+                    labelsToRemove.Add(blankSpace3);
+                }
             }
             else
             {
@@ -586,9 +739,47 @@ namespace hangmanGame_t3_indes
                 blankSpace.ForeColor = Color.White;
                 blankSpace.AutoSize = true;
                 blankSpace.TextAlign = ContentAlignment.MiddleCenter;
-                blankSpace.Location = new Point(403, 174);
+                blankSpace.Location = new Point(393, 174);
                 blankSpace.Font = new Font("Montserrat", 43);
                 play.Controls.Add(blankSpace);
+
+                labelsToRemove.Add(blankSpace);
+
+                int pos = 393;
+
+                for (int i = 0; i < (word.Length - 1) / 2; i++)
+                {
+                    pos = pos - 50;
+                    Label blankSpace2 = new Label();
+                    blankSpace2.Text = "_";
+                    blankSpace2.Name = "";
+                    blankSpace2.ForeColor = Color.White;
+                    blankSpace2.AutoSize = true;
+                    blankSpace2.TextAlign = ContentAlignment.MiddleCenter;
+                    blankSpace2.Location = new Point(pos, 174);
+                    blankSpace2.Font = new Font("Montserrat", 43);
+                    play.Controls.Add(blankSpace2);
+
+                    labelsToRemove.Add(blankSpace2);
+                }
+
+                int pos2 = 393;
+
+                for (int i = 0; i < (word.Length - 1) / 2; i++)
+                {
+                    pos2 = pos2 + 50;
+                    Label blankSpace2 = new Label();
+                    blankSpace2.Text = "_";
+                    blankSpace2.Name = "";
+                    blankSpace2.ForeColor = Color.White;
+                    blankSpace2.AutoSize = true;
+                    blankSpace2.TextAlign = ContentAlignment.MiddleCenter;
+                    blankSpace2.Location = new Point(pos2, 174);
+                    blankSpace2.Font = new Font("Montserrat", 43);
+                    play.Controls.Add(blankSpace2);
+
+                    labelsToRemove.Add(blankSpace2);
+                }
             }
         }
 
@@ -603,7 +794,7 @@ namespace hangmanGame_t3_indes
             {
 
                 //Add only the difficult words
-                if (wordList[i].difficulty == "difficult" && !alreadyUsedLetters.Contains(wordList[i]))
+                if (wordList[i].difficulty == "difficult" && !alreadyUsedWords.Contains(wordList[i]))
                 {
 
                     //Add word to new list
@@ -618,7 +809,7 @@ namespace hangmanGame_t3_indes
             chosenWord = items[rnd.Next(0, items.Count)];
 
             //Add chosen word to already used words, so tht it's not picked again
-            alreadyUsedLetters.Add(chosenWord);
+            alreadyUsedWords.Add(chosenWord);
 
             //Splite the word in to list
             devidedWord = SeparateWord(chosenWord.name);
