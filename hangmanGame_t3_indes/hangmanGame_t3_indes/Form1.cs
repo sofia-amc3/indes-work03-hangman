@@ -328,7 +328,10 @@ namespace hangmanGame_t3_indes
                 ShowWinPopUp();
 
                 await Task.Delay(3000);
-                // Go to next level TODO
+
+                currentLevel++;
+                displayGame();
+                ResetButtons();
             }
         }
 
@@ -348,7 +351,9 @@ namespace hangmanGame_t3_indes
                 ShowLosePopUp();
 
                 await Task.Delay(3000);
-                // Go to next level TODO
+
+                currentLevel++;
+                displayGame();
                 ResetButtons();
             }
         }
@@ -475,96 +480,106 @@ namespace hangmanGame_t3_indes
             play_currentLevel.Text = "Level " + currentLevel + "/" + totalLevels;
             UpdateScore();
 
-            //Generate word for 5 levels
-            if (totalLevels == 5) { // if palyer chose 5 levels 
-            
-                //Check if current level
-                if(currentLevel < 3) // if 2 or less pick from the easy difficulty
-                {
-                    //Look through the easy words
-                    EasyWordRnd();
-                }
-
-                //Check if current level is 3 or 4
-                if (currentLevel >= 3 && currentLevel < 5) { 
-                
-                    //look through the average words
-                    AverageWordRnd();
-                
-                }
-
-                //Check if current level is 5
-                if (currentLevel == 5) { 
-                
-                    //look throught the difficult words
-                    DifficultWordRnd();
-                
-                }
-            
+            if (currentLevel > totalLevels)
+            {
+                DisplayHighScores();
+                menu.SelectedIndex = 5;
             }
+            else
+            {
+                //Generate word for 5 levels
+                if (totalLevels == 5)
+                { // if palyer chose 5 levels 
 
-            //Generate word for 10 levels
-            if (totalLevels == 10)
-            { // if palyer chose 10 levels 
+                    //Check if current level
+                    if (currentLevel < 3) // if 2 or less pick from the easy difficulty
+                    {
+                        //Look through the easy words
+                        EasyWordRnd();
+                    }
 
-                //Check if current level
-                if (currentLevel < 5) // if 4 or less pick from the easy difficulty
-                {
-                    //Look through the easy words
-                    EasyWordRnd();
+                    //Check if current level is 3 or 4
+                    if (currentLevel >= 3 && currentLevel < 5)
+                    {
+
+                        //look through the average words
+                        AverageWordRnd();
+
+                    }
+
+                    //Check if current level is 5
+                    if (currentLevel == 5)
+                    {
+
+                        //look throught the difficult words
+                        DifficultWordRnd();
+
+                    }
+
                 }
 
-                //Check if current level is 5 or higher, but less then 9
-                if (currentLevel >= 5 && currentLevel < 9)
-                {
+                //Generate word for 10 levels
+                if (totalLevels == 10)
+                { // if palyer chose 10 levels 
 
-                    //look through the average words
-                    AverageWordRnd();
+                    //Check if current level
+                    if (currentLevel < 5) // if 4 or less pick from the easy difficulty
+                    {
+                        //Look through the easy words
+                        EasyWordRnd();
+                    }
+
+                    //Check if current level is 5 or higher, but less then 9
+                    if (currentLevel >= 5 && currentLevel < 9)
+                    {
+
+                        //look through the average words
+                        AverageWordRnd();
+
+                    }
+
+                    //Check if current level is 9 or higher
+                    if (currentLevel >= 9)
+                    {
+
+                        //look throught the difficult words
+                        DifficultWordRnd();
+
+                    }
 
                 }
 
-                //Check if current level is 9 or higher
-                if (currentLevel >= 9)
-                {
+                //Generate word for 15 levels
+                if (totalLevels == 15)
+                { // if palyer chose 15 levels 
 
-                    //look throught the difficult words
-                    DifficultWordRnd();
+                    //Check if current level
+                    if (currentLevel < 6) // if 5 or less pick from the easy difficulty
+                    {
+                        //Look through the easy words
+                        EasyWordRnd();
+                    }
+
+                    //Check if current level is 6 or higher, but less then 11
+                    if (currentLevel >= 6 && currentLevel < 11)
+                    {
+
+                        //look through the average words
+                        AverageWordRnd();
+
+                    }
+
+                    //Check if current level is 11 or higher
+                    if (currentLevel >= 11)
+                    {
+
+                        //look throught the difficult words
+                        DifficultWordRnd();
+
+                    }
 
                 }
-
             }
-
-            //Generate word for 15 levels
-            if (totalLevels == 15)
-            { // if palyer chose 15 levels 
-
-                //Check if current level
-                if (currentLevel < 6) // if 5 or less pick from the easy difficulty
-                {
-                    //Look through the easy words
-                    EasyWordRnd();
-                }
-
-                //Check if current level is 6 or higher, but less then 11
-                if (currentLevel >= 6 && currentLevel < 11)
-                {
-
-                    //look through the average words
-                    AverageWordRnd();
-
-                }
-
-                //Check if current level is 11 or higher
-                if (currentLevel >= 11)
-                {
-
-                    //look throught the difficult words
-                    DifficultWordRnd();
-
-                }
-
-            }
-
         }
 
         #region Randomize Words
