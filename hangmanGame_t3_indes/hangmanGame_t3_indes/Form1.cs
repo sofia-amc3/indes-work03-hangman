@@ -45,8 +45,9 @@ namespace hangmanGame_t3_indes
         {
             // Initialize list
             playerList = new List<Player>();
-            
+
             InitializeComponent();
+
             wordListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\HangManWords.json");
             Debug.WriteLine(wordListPath);
 
@@ -194,15 +195,18 @@ namespace hangmanGame_t3_indes
         // Play Screen (Keyboard) -------------------------------------------------------------------------------------------------------------------------
         private void letterBtn_Click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
+            if (hangmanStage < 6 && numLettersDiscovered != devidedWord.Count)
+            {
+                Button btn = sender as Button;
 
-            clickedButtons.Add(btn);
+                clickedButtons.Add(btn);
 
-            btn.Enabled = false;
-            btn.BackColor = backgroundUsed;
-            btn.ForeColor = foregroundUsed;
+                btn.Enabled = false;
+                btn.BackColor = backgroundUsed;
+                btn.ForeColor = foregroundUsed;
 
-            RegisterLetter(btn.Text.ToLower());
+                RegisterLetter(btn.Text.ToLower());
+            }
         }
 
         private void RegisterLetter(string letter)
@@ -315,7 +319,6 @@ namespace hangmanGame_t3_indes
             // The player WINS when numDiscoveredLetters = devidedWord.Count
             if (numLettersDiscovered == devidedWord.Count)
             {
-                // Disable all the buttons! TODO
                 score = score + 50;
                 UpdateScore();
 
@@ -332,7 +335,6 @@ namespace hangmanGame_t3_indes
             // The player LOSES when hangmanStage = 6 (full image)
             if (hangmanStage == 6)
             {
-                // Disable all the buttons! TODO
                 score = score - 50;
                 UpdateScore();
 
@@ -465,7 +467,6 @@ namespace hangmanGame_t3_indes
             // Reset Buttons
             ResetButtons();
             clickedButtons.Clear();
-
 
             play_currentLevel.Text = "Level " + currentLevel + "/" + totalLevels;
             UpdateScore();
