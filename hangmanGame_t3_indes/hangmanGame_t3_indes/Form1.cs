@@ -229,13 +229,14 @@ namespace hangmanGame_t3_indes
                         if (devidedWord.Count % 2 == 0)
                         {
                             // First pos = 368 - (((devidedWord.Count - 2) / 2) * 30) (space between letters)
-                            int pos = 368 - (((devidedWord.Count - 2) / 2) * 50);
+                            int pos = 368 + 7 - (((devidedWord.Count - 2) / 2) * 50);
                             pos = pos + 50 * counter;
                             Label wordSpace = new Label();
                             wordSpace.Text = letter;
                             wordSpace.Name = "";
                             wordSpace.ForeColor = Color.White;
-                            wordSpace.AutoSize = true;
+                            wordSpace.Width = 50;
+                            wordSpace.Height = 70;
                             wordSpace.TextAlign = ContentAlignment.MiddleCenter;
                             wordSpace.Location = new Point(pos, 160);
                             wordSpace.Font = new Font("Montserrat", 39);
@@ -247,13 +248,14 @@ namespace hangmanGame_t3_indes
                         else
                         {
                             // First pos = 393 - (((devidedWord.Count - 1) / 2) * 50) (space between letters)
-                            int pos = 393 - ((devidedWord.Count - 1) / 2) * 50;
+                            int pos = 393 + 7 - ((devidedWord.Count - 1) / 2) * 50;
                             pos = pos + 50 * counter;
                             Label wordSpace = new Label();
                             wordSpace.Text = letter;
                             wordSpace.Name = "";
                             wordSpace.ForeColor = Color.White;
-                            wordSpace.AutoSize = true;
+                            wordSpace.Width = 50;
+                            wordSpace.Height = 70;
                             wordSpace.TextAlign = ContentAlignment.MiddleCenter;
                             wordSpace.Location = new Point(pos, 160);
                             wordSpace.Font = new Font("Montserrat", 39);
@@ -386,13 +388,14 @@ namespace hangmanGame_t3_indes
                     if (devidedWord.Count % 2 == 0)
                     {
                         // First pos = 368 - (((devidedWord.Count - 2) / 2) * 30) (space between letters)
-                        int pos = 368 - (((devidedWord.Count - 2) / 2) * 50);
+                        int pos = 368 + 7 - (((devidedWord.Count - 2) / 2) * 50);
                         pos = pos + 50 * counter;
                         Label wordSpace = new Label();
                         wordSpace.Text = letter;
                         wordSpace.Name = "";
                         wordSpace.ForeColor = Color.White;
-                        wordSpace.AutoSize = true;
+                        wordSpace.Width = 50;
+                        wordSpace.Height = 70;
                         wordSpace.TextAlign = ContentAlignment.MiddleCenter;
                         wordSpace.Location = new Point(pos, 160);
                         wordSpace.Font = new Font("Montserrat", 39);
@@ -404,13 +407,14 @@ namespace hangmanGame_t3_indes
                     else
                     {
                         // First pos = 393 - (((devidedWord.Count - 1) / 2) * 50) (space between letters)
-                        int pos = 393 - ((devidedWord.Count - 1) / 2) * 50;
+                        int pos = 393 + 7 - ((devidedWord.Count - 1) / 2) * 50;
                         pos = pos + 50 * counter;
                         Label wordSpace = new Label();
                         wordSpace.Text = letter;
                         wordSpace.Name = "";
                         wordSpace.ForeColor = Color.White;
-                        wordSpace.AutoSize = true;
+                        wordSpace.Width = 50;
+                        wordSpace.Height = 70;
                         wordSpace.TextAlign = ContentAlignment.MiddleCenter;
                         wordSpace.Location = new Point(pos, 160);
                         wordSpace.Font = new Font("Montserrat", 39);
