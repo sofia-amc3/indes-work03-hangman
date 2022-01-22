@@ -78,11 +78,13 @@ namespace hangmanGame_t3_indes
 
         }
 
+        //Para remover
         private List<Player> SortList(List<Player> x)
         {
 
             List<Player> sortedPlayerList = new List<Player>();
 
+            
             //Sort the playerList for player with the 
             IEnumerable<Player> query = x.OrderBy(player => player.score);
 
@@ -95,16 +97,17 @@ namespace hangmanGame_t3_indes
 
             }
 
-            if (sortedPlayerList.Count > 5)
-            {
-                for (int i = sortedPlayerList.Count - 1; i >= 5; i--) { 
-                
-                    sortedPlayerList.RemoveAt(i);
-                
-                }
-            }
 
             return sortedPlayerList;
+        }
+
+
+        //Sort by score
+        static int SortByScore (Player p1, Player p2)
+        {
+
+            return p1.score.CompareTo(p2.score);
+
         }
         // Welcome Screen --------------------------------------------------------------------------------------------------------------------------------------
         private void welcome_creditsBtn_Click(object sender, EventArgs e)
@@ -839,7 +842,7 @@ namespace hangmanGame_t3_indes
 
         }
 
-        #endregion
+        
 
 
         //Add the letters to a list
@@ -856,6 +859,7 @@ namespace hangmanGame_t3_indes
 
             return newWord;
         }
+    #endregion
 
         // When you finish the game
         private void DisplayHighScores() {
@@ -864,12 +868,27 @@ namespace hangmanGame_t3_indes
             Label[] topPlayers = new Label[] { highScore_player1, highScore_player2, highScore_player3, highScore_player4, highScore_player5 };
             Label[] topScores = new Label[] { highScore_player1Score, highScore_player2Score, highScore_player3Score, highScore_player4Score, highScore_player5Score };
 
-            playerList = SortList(playerList);
-            //Add data
+            //Sort list by player score
+            playerList.Sort(SortByScore);
+
+            //Check if list count is not bigger then 5
+            if (playerList.Count > 5)
+            {
+                //if it is, start removing from the btton up
+                for (int i = playerList.Count - 1; i >= 5; i--)
+                {
+                    //Remove extras
+                    playerList.RemoveAt(i);
+
+                }
+            }
+
+
+            // Set labels text
             for (int i = 0; i < playerList.Count; i++) {
 
-                topPlayers[i].Text = playerList[i].name;
-                topScores[i].Text = playerList[i].score.ToString() + " points";
+                topPlayers[i].Text = playerList[(playerList.Count - 1) - i].name;
+                topScores[i].Text = playerList[(playerList.Count - 1) - i].score.ToString() + " points";
             
             }
 

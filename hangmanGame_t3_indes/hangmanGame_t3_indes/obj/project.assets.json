@@ -2679,19 +2679,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SAP-PSC6-G7\\.nuget\\packages\\": {}
+    "C:\\Users\\dldra\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\01. Work\\01. University - ISEP (MEI)\\02. 1st Year\\01. Interfaces e Design\\04. Trabalho 03\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes.csproj",
+      "projectUniqueName": "D:\\Terceiro projecto de INDES\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes.csproj",
       "projectName": "hangmanGame_t3_indes",
-      "projectPath": "D:\\01. Work\\01. University - ISEP (MEI)\\02. 1st Year\\01. Interfaces e Design\\04. Trabalho 03\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes.csproj",
-      "packagesPath": "C:\\Users\\SAP-PSC6-G7\\.nuget\\packages\\",
-      "outputPath": "D:\\01. Work\\01. University - ISEP (MEI)\\02. 1st Year\\01. Interfaces e Design\\04. Trabalho 03\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\obj\\",
+      "projectPath": "D:\\Terceiro projecto de INDES\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes.csproj",
+      "packagesPath": "C:\\Users\\dldra\\.nuget\\packages\\",
+      "outputPath": "D:\\Terceiro projecto de INDES\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\SAP-PSC6-G7\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dldra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2740,7 +2745,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.210\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
