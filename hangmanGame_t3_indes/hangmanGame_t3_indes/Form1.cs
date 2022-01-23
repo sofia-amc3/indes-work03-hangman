@@ -13,7 +13,6 @@ using System.IO;
 using System.Diagnostics;
 using Newtonsoft.Json;
 using System.Threading;
-using System.Speech.Recognition;
 
 namespace hangmanGame_t3_indes
 {
@@ -37,8 +36,6 @@ namespace hangmanGame_t3_indes
         int numLettersDiscovered = 0;
         int hangmanStage = 0;
         int roundScore = 0;
-        // Speech Recognition
-        SpeechRecognitionEngine speechRecognizer;
 
         // Color for gray out buttons
         Color backgroundOriginal = Color.FromArgb(255, 17, 36, 68);
