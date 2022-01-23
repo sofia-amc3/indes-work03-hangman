@@ -35,6 +35,7 @@ namespace hangmanGame_t3_indes
         List<Label> labelsToRemove = new List<Label>();
         int numLettersDiscovered = 0;
         int hangmanStage = 0;
+        int roundScore = 0;
 
         // Color for gray out buttons
         Color backgroundOriginal = Color.FromArgb(255, 17, 36, 68);
@@ -54,10 +55,10 @@ namespace hangmanGame_t3_indes
             // Check if file exists
             if (File.Exists(wordListPath))
             {
-                  string json = File.ReadAllText(wordListPath);
-                  wordList = JsonConvert.DeserializeObject<List<Item>>(json);
-                 
-                  Debug.WriteLine("File exists");
+                string json = File.ReadAllText(wordListPath);
+                wordList = JsonConvert.DeserializeObject<List<Item>>(json);
+
+                Debug.WriteLine("File exists");
             }
             else { Debug.WriteLine("File doesn't exist"); }
 
@@ -72,7 +73,8 @@ namespace hangmanGame_t3_indes
                 playerList = SortList(JsonConvert.DeserializeObject<List<Player>>(json));
 
             }
-            else {
+            else
+            {
 
                 Debug.WriteLine("Players.json doesn't exist");
             }
@@ -85,7 +87,7 @@ namespace hangmanGame_t3_indes
 
             List<Player> sortedPlayerList = new List<Player>();
 
-            
+
             //Sort the playerList for player with the 
             IEnumerable<Player> query = x.OrderBy(player => player.score);
 
@@ -104,7 +106,7 @@ namespace hangmanGame_t3_indes
 
 
         //Sort by score
-        static int SortByScore (Player p1, Player p2)
+        static int SortByScore(Player p1, Player p2)
         {
 
             return p1.score.CompareTo(p2.score);
@@ -142,9 +144,9 @@ namespace hangmanGame_t3_indes
         private void enterName_playBtn_Click(object sender, EventArgs e)
         {
             int check = 0;
-            
+
             // Verifies if the name inside of the input is valid 
-            if(enterName_input.Text.Length >= 3 && enterName_input.Text.Length <= 20)
+            if (enterName_input.Text.Length >= 3 && enterName_input.Text.Length <= 20)
             {
                 // Create new player
                 Player newPlayer = new Player();
@@ -172,9 +174,35 @@ namespace hangmanGame_t3_indes
             else MessageBox.Show("No number of levels was selected. Please select your total number of levels.", "No Levels Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             //Only goe to next page if all the verefications are made
-            if (check == 2) {
+            if (check == 2)
+            {
+
+                // Reset Power Ups
+                Button btn = (Button)this.Controls.Find("play_useBoosterBtn", true).First();
+
+                btn.Enabled = true;
+                btn.BackColor = backgroundOriginal;
+                btn.ForeColor = Color.White;
+
+                btn = (Button)this.Controls.Find("play_changeThemeBtn", true).First();
+
+                btn.Enabled = true;
+                btn.BackColor = backgroundOriginal;
+                btn.ForeColor = Color.White;
+
+                btn = (Button)this.Controls.Find("play_changeWordBtn", true).First();
+
+                btn.Enabled = true;
+                btn.BackColor = backgroundOriginal;
+                btn.ForeColor = Color.White;
+
+                // Reset game score and current level
+
+                score = 0;
+                currentLevel = 1;
 
                 // Goes to Play Area
+
                 displayGame();
                 menu.SelectedIndex = 4;
 
@@ -209,11 +237,25 @@ namespace hangmanGame_t3_indes
             }
         }
 
+        private void LetterBtnBooster(string buttonLetter)
+        {
+            Button btn = (Button) this.Controls.Find("letter" + buttonLetter + "Btn", true).First();
+
+            clickedButtons.Add(btn);
+
+            btn.Enabled = false;
+            btn.BackColor = backgroundUsed;
+            btn.ForeColor = foregroundUsed;
+
+            RegisterLetter(btn.Text.ToLower());
+        }
+
         private void RegisterLetter(string letter)
         {
             if (devidedWord.Contains(letter))
             {
                 score = score + 5;
+                roundScore = roundScore + 5;
                 UpdateScore();
                 revealedLetters.Add(letter);
                 int counter = 0;
@@ -224,7 +266,7 @@ namespace hangmanGame_t3_indes
                     {
                         // Player found a letter!
                         numLettersDiscovered++;
-                        
+
                         // Show letter - Create label at the correct position and fill it with the letter
                         if (devidedWord.Count % 2 == 0)
                         {
@@ -275,6 +317,7 @@ namespace hangmanGame_t3_indes
             {
                 // Player did not get a letter right - Punish them!
                 score = score - 5;
+                roundScore = roundScore - 5;
                 UpdateScore();
                 AdvanceHangman();
             }
@@ -285,7 +328,8 @@ namespace hangmanGame_t3_indes
             hangmanStage++;
 
             // Change image depending on the stage!
-            switch (hangmanStage) {
+            switch (hangmanStage)
+            {
                 case 1:
                     play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-02.png", true);
                     break;
@@ -446,7 +490,7 @@ namespace hangmanGame_t3_indes
         }
 
         //Save player data 
-        private void SaveUserData() 
+        private void SaveUserData()
         {
             //Convert list to string
             string json = JsonConvert.SerializeObject(playerList);
@@ -455,7 +499,7 @@ namespace hangmanGame_t3_indes
             File.WriteAllText(playerListPath, json);
         }
 
-        private void displayGame()
+        private void displayGame(string themeFilterInclude = "", string themeFilterExclude = "")
         {
             // Clear previous labels
             foreach (Label label in labelsToRemove)
@@ -477,6 +521,9 @@ namespace hangmanGame_t3_indes
             ResetButtons();
             clickedButtons.Clear();
 
+            // Reset round score
+            roundScore = 0;
+
             play_currentLevel.Text = "Level " + currentLevel + "/" + totalLevels;
             UpdateScore();
 
@@ -495,7 +542,7 @@ namespace hangmanGame_t3_indes
                     if (currentLevel < 3) // if 2 or less pick from the easy difficulty
                     {
                         //Look through the easy words
-                        EasyWordRnd();
+                        EasyWordRnd(themeFilterInclude, themeFilterExclude);
                     }
 
                     //Check if current level is 3 or 4
@@ -503,7 +550,7 @@ namespace hangmanGame_t3_indes
                     {
 
                         //look through the average words
-                        AverageWordRnd();
+                        AverageWordRnd(themeFilterInclude, themeFilterExclude);
 
                     }
 
@@ -512,7 +559,7 @@ namespace hangmanGame_t3_indes
                     {
 
                         //look throught the difficult words
-                        DifficultWordRnd();
+                        DifficultWordRnd(themeFilterInclude, themeFilterExclude);
 
                     }
 
@@ -526,7 +573,7 @@ namespace hangmanGame_t3_indes
                     if (currentLevel < 5) // if 4 or less pick from the easy difficulty
                     {
                         //Look through the easy words
-                        EasyWordRnd();
+                        EasyWordRnd(themeFilterInclude, themeFilterExclude);
                     }
 
                     //Check if current level is 5 or higher, but less then 9
@@ -534,7 +581,7 @@ namespace hangmanGame_t3_indes
                     {
 
                         //look through the average words
-                        AverageWordRnd();
+                        AverageWordRnd(themeFilterInclude, themeFilterExclude);
 
                     }
 
@@ -543,7 +590,7 @@ namespace hangmanGame_t3_indes
                     {
 
                         //look throught the difficult words
-                        DifficultWordRnd();
+                        DifficultWordRnd(themeFilterInclude, themeFilterExclude);
 
                     }
 
@@ -557,7 +604,7 @@ namespace hangmanGame_t3_indes
                     if (currentLevel < 6) // if 5 or less pick from the easy difficulty
                     {
                         //Look through the easy words
-                        EasyWordRnd();
+                        EasyWordRnd(themeFilterInclude, themeFilterExclude);
                     }
 
                     //Check if current level is 6 or higher, but less then 11
@@ -565,7 +612,7 @@ namespace hangmanGame_t3_indes
                     {
 
                         //look through the average words
-                        AverageWordRnd();
+                        AverageWordRnd(themeFilterInclude, themeFilterExclude);
 
                     }
 
@@ -574,7 +621,7 @@ namespace hangmanGame_t3_indes
                     {
 
                         //look throught the difficult words
-                        DifficultWordRnd();
+                        DifficultWordRnd(themeFilterInclude, themeFilterExclude);
 
                     }
 
@@ -584,7 +631,8 @@ namespace hangmanGame_t3_indes
 
         #region Randomize Words
         //Randomize easy words
-        private void EasyWordRnd() {
+        private void EasyWordRnd(string themeFilterInclude = "", string themeFilterExclude = "")
+        {
 
             List<Item> items = new List<Item>();
 
@@ -603,25 +651,36 @@ namespace hangmanGame_t3_indes
 
             }
 
+            if (themeFilterInclude != "")
+            {
+                items = items.Where(i => i.theme == themeFilterInclude).ToList();
+            }
+
+            if (themeFilterExclude != "")
+            {
+                items = items.Where(i => i.theme != themeFilterExclude).ToList();
+            }
+
             Random rnd = new Random();
             chosenWord = items[rnd.Next(0, items.Count)];
             alreadyUsedWords.Add(chosenWord);
             devidedWord = SeparateWord(chosenWord.name);
-            
+
             string playWord = "";
             string line = "";
 
             for (int i = 0; i < devidedWord.Count; i++)
-            { 
+            {
                 playWord += devidedWord[i];
                 line += "_";
-               
-                if (i != devidedWord.Count - 1) {
+
+                if (i != devidedWord.Count - 1)
+                {
 
                     line += " ";
                     playWord += "  ";
                 }
-            
+
             }
 
             //Add values to labels
@@ -634,7 +693,7 @@ namespace hangmanGame_t3_indes
         }
 
         //Randomize average words
-        private void AverageWordRnd()
+        private void AverageWordRnd(string themeFilterInclude = "", string themeFilterExclude = "")
         {
 
             List<Item> items = new List<Item>();
@@ -652,6 +711,16 @@ namespace hangmanGame_t3_indes
 
                 }
 
+            }
+
+            if (themeFilterInclude != "")
+            {
+                items = items.Where(i => i.theme == themeFilterInclude).ToList();
+            }
+
+            if (themeFilterExclude != "")
+            {
+                items = items.Where(i => i.theme != themeFilterExclude).ToList();
             }
 
             //Generate randomize word
@@ -693,6 +762,86 @@ namespace hangmanGame_t3_indes
 
 
         }
+
+        //Randomize difficult words
+        private void DifficultWordRnd(string themeFilterInclude = "", string themeFilterExclude = "")
+        {
+
+            List<Item> items = new List<Item>();
+
+            //Search
+            for (int i = 0; i < wordList.Count; i++)
+            {
+
+                //Add only the difficult words
+                if (wordList[i].difficulty == "difficult" && !alreadyUsedWords.Contains(wordList[i]))
+                {
+
+                    //Add word to new list
+                    items.Add(wordList[i]);
+
+                }
+
+            }
+
+            if (themeFilterInclude != "")
+            {
+                items = items.Where(i => i.theme == themeFilterInclude).ToList();
+            }
+
+            if (themeFilterExclude != "")
+            {
+                items = items.Where(i => i.theme != themeFilterExclude).ToList();
+            }
+
+            //Generate randomize word
+            Random rnd = new Random();
+            chosenWord = items[rnd.Next(0, items.Count)];
+
+            //Add chosen word to already used words, so tht it's not picked again
+            alreadyUsedWords.Add(chosenWord);
+
+            //Splite the word in to list
+            devidedWord = SeparateWord(chosenWord.name);
+            string playWord = "";
+            string line = "";
+
+            for (int i = 0; i < devidedWord.Count; i++)
+            {
+                playWord += devidedWord[i];
+
+                if (devidedWord[i] != " ")
+                    line += "_";
+                else
+                    line += " ";
+
+            }
+
+            //Add values to labels
+            //play_word.Text = playWord;
+            play_theme.Text = chosenWord.theme.ToUpper();
+            GenerateBlankSpaces(chosenWord.name);
+            play_letterDashes.Text = "";
+
+        }
+
+        //Add the letters to a list
+        private List<string> SeparateWord(string x)
+        {
+
+
+            List<string> newWord = new List<string>();
+
+
+            foreach (char c in x)
+            {
+
+                newWord.Add(c.ToString());
+            }
+
+            return newWord;
+        }
+        #endregion
 
         private void GenerateBlankSpaces(String word)
         {
@@ -810,79 +959,9 @@ namespace hangmanGame_t3_indes
             }
         }
 
-        //Randomize difficult words
-        private void DifficultWordRnd()
-        {
-
-            List<Item> items = new List<Item>();
-
-            //Search
-            for (int i = 0; i < wordList.Count; i++)
-            {
-
-                //Add only the difficult words
-                if (wordList[i].difficulty == "difficult" && !alreadyUsedWords.Contains(wordList[i]))
-                {
-
-                    //Add word to new list
-                    items.Add(wordList[i]);
-
-                }
-
-            }
-
-            //Generate randomize word
-            Random rnd = new Random();
-            chosenWord = items[rnd.Next(0, items.Count)];
-
-            //Add chosen word to already used words, so tht it's not picked again
-            alreadyUsedWords.Add(chosenWord);
-
-            //Splite the word in to list
-            devidedWord = SeparateWord(chosenWord.name);
-            string playWord = "";
-            string line = "";
-
-            for (int i = 0; i < devidedWord.Count; i++)
-            {
-                playWord += devidedWord[i];
-
-                if (devidedWord[i] != " ")
-                line += "_";      
-                else
-                line += " ";
-
-            }
-
-            //Add values to labels
-            //play_word.Text = playWord;
-            play_theme.Text = chosenWord.theme.ToUpper();
-            GenerateBlankSpaces(chosenWord.name);
-            play_letterDashes.Text = "";
-
-        }
-
-        
-
-
-        //Add the letters to a list
-        private List<string> SeparateWord(string x) {
-
-
-            List<string> newWord = new List<string>();
-
-            
-            foreach (char c in x) {
-
-                newWord.Add(c.ToString());
-            }
-
-            return newWord;
-        }
-    #endregion
-
         // When you finish the game
-        private void DisplayHighScores() {
+        private void DisplayHighScores()
+        {
 
             //Updaty
             Label[] topPlayers = new Label[] { highScore_player1, highScore_player2, highScore_player3, highScore_player4, highScore_player5 };
@@ -905,14 +984,75 @@ namespace hangmanGame_t3_indes
 
 
             // Set labels text
-            for (int i = 0; i < playerList.Count; i++) {
+            for (int i = 0; i < playerList.Count; i++)
+            {
 
                 topPlayers[i].Text = playerList[(playerList.Count - 1) - i].name;
                 topScores[i].Text = playerList[(playerList.Count - 1) - i].score.ToString() + " points";
-            
+
             }
 
 
+        }
+
+        private void FetchRandomLetterFromWord()
+        {
+            List<string> possibleOutcomes = devidedWord.Where(l => !revealedLetters.Contains(l)).ToList();
+
+            Random rnd = new Random();
+            string chosenLetter = possibleOutcomes[rnd.Next(0, possibleOutcomes.Count)];
+
+            LetterBtnBooster(chosenLetter);
+        }
+
+        private void ResetRoundScore()
+        {
+            int scoreProfit = roundScore;
+            score = score - scoreProfit;
+        }
+
+        private void play_changeThemeBtn_Click(object sender, EventArgs e)
+        {
+            if (hangmanStage < 6 && numLettersDiscovered != devidedWord.Count)
+            {
+                Button btn = sender as Button;
+
+                btn.Enabled = false;
+                btn.BackColor = backgroundUsed;
+                btn.ForeColor = foregroundUsed;
+
+                ResetRoundScore();
+                displayGame("", chosenWord.theme);
+            }
+        }
+
+        private void play_changeWordBtn_Click(object sender, EventArgs e)
+        {
+            if (hangmanStage < 6 && numLettersDiscovered != devidedWord.Count)
+            {
+                Button btn = sender as Button;
+
+                btn.Enabled = false;
+                btn.BackColor = backgroundUsed;
+                btn.ForeColor = foregroundUsed;
+
+                ResetRoundScore();
+                displayGame(chosenWord.theme);
+            }
+        }
+
+        private void play_useBoosterBtn_Click(object sender, EventArgs e)
+        {
+            if (hangmanStage < 6 && numLettersDiscovered != devidedWord.Count)
+            {
+                Button btn = sender as Button;
+
+                btn.Enabled = false;
+                btn.BackColor = backgroundUsed;
+                btn.ForeColor = foregroundUsed;
+
+                FetchRandomLetterFromWord();
+            }
         }
 
         // Cheack if input is right
@@ -920,8 +1060,8 @@ namespace hangmanGame_t3_indes
 }
 
 [System.Serializable]
-public class Item 
-{ 
+public class Item
+{
     public int id;
     public string name;
     public string difficulty;
@@ -929,8 +1069,8 @@ public class Item
 }
 
 [System.Serializable]
-public class Player 
-{ 
+public class Player
+{
     public int id;
     public string name;
     public int score;

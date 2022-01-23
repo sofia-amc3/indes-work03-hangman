@@ -570,6 +570,7 @@ namespace hangmanGame_t3_indes
             this.play_useBoosterBtn.TabIndex = 49;
             this.play_useBoosterBtn.Text = "USE BOOSTER";
             this.play_useBoosterBtn.UseVisualStyleBackColor = true;
+            this.play_useBoosterBtn.Click += new System.EventHandler(this.play_useBoosterBtn_Click);
             // 
             // play_score
             // 
@@ -606,6 +607,7 @@ namespace hangmanGame_t3_indes
             this.play_changeWordBtn.TabIndex = 46;
             this.play_changeWordBtn.Text = "CHANGE WORD";
             this.play_changeWordBtn.UseVisualStyleBackColor = true;
+            this.play_changeWordBtn.Click += new System.EventHandler(this.play_changeWordBtn_Click);
             // 
             // play_changeThemeBtn
             // 
@@ -618,6 +620,7 @@ namespace hangmanGame_t3_indes
             this.play_changeThemeBtn.TabIndex = 45;
             this.play_changeThemeBtn.Text = "CHANGE THEME";
             this.play_changeThemeBtn.UseVisualStyleBackColor = true;
+            this.play_changeThemeBtn.Click += new System.EventHandler(this.play_changeThemeBtn_Click);
             // 
             // play_theme
             // 
