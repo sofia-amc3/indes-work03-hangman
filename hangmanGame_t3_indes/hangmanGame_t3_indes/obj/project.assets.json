@@ -2679,19 +2679,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\franc\\.nuget\\packages\\": {}
+    "C:\\Users\\SAP-PSC6-G7\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\INDES\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes.csproj",
+      "projectUniqueName": "D:\\01. Work\\01. University - ISEP (MEI)\\02. 1st Year\\01. Interfaces e Design\\04. Trabalho 03\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes.csproj",
       "projectName": "hangmanGame_t3_indes",
-      "projectPath": "D:\\INDES\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes.csproj",
-      "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-      "outputPath": "D:\\INDES\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\obj\\",
+      "projectPath": "D:\\01. Work\\01. University - ISEP (MEI)\\02. 1st Year\\01. Interfaces e Design\\04. Trabalho 03\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes.csproj",
+      "packagesPath": "C:\\Users\\SAP-PSC6-G7\\.nuget\\packages\\",
+      "outputPath": "D:\\01. Work\\01. University - ISEP (MEI)\\02. 1st Year\\01. Interfaces e Design\\04. Trabalho 03\\trabalho03-indes\\hangmanGame_t3_indes\\hangmanGame_t3_indes\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SAP-PSC6-G7\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2703,6 +2703,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -2714,6 +2715,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Newtonsoft.Json": {
             "target": "Package",
@@ -2738,7 +2740,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.210\\RuntimeIdentifierGraph.json"
       }
     }
   }
