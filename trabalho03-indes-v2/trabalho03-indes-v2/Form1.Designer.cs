@@ -52,6 +52,8 @@ namespace trabalho03_indes_v2
             this.rules_backBtn = new System.Windows.Forms.Button();
             this.rules_img = new System.Windows.Forms.PictureBox();
             this.enterName = new System.Windows.Forms.TabPage();
+            this.speechHelper_numberOfLevels = new System.Windows.Forms.Label();
+            this.speechHelper_playerName = new System.Windows.Forms.Label();
             this.enterName_radioBtn1 = new System.Windows.Forms.RadioButton();
             this.enterName_radioBtn3 = new System.Windows.Forms.RadioButton();
             this.enterName_radioBtn2 = new System.Windows.Forms.RadioButton();
@@ -63,6 +65,7 @@ namespace trabalho03_indes_v2
             this.enterName_gameLogo = new System.Windows.Forms.PictureBox();
             this.enterName_backBtn = new System.Windows.Forms.Button();
             this.play = new System.Windows.Forms.TabPage();
+            this.speechHelper_letter = new System.Windows.Forms.Label();
             this.play_useBoosterBtn = new System.Windows.Forms.Button();
             this.play_changeWordBtn = new System.Windows.Forms.Button();
             this.play_changeThemeBtn = new System.Windows.Forms.Button();
@@ -405,6 +408,8 @@ namespace trabalho03_indes_v2
             // enterName
             // 
             this.enterName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(36)))), ((int)(((byte)(68)))));
+            this.enterName.Controls.Add(this.speechHelper_numberOfLevels);
+            this.enterName.Controls.Add(this.speechHelper_playerName);
             this.enterName.Controls.Add(this.enterName_radioBtn1);
             this.enterName.Controls.Add(this.enterName_radioBtn3);
             this.enterName.Controls.Add(this.enterName_radioBtn2);
@@ -421,12 +426,38 @@ namespace trabalho03_indes_v2
             this.enterName.TabIndex = 3;
             this.enterName.Text = "enterName";
             // 
+            // speechHelper_numberOfLevels
+            // 
+            this.speechHelper_numberOfLevels.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.speechHelper_numberOfLevels.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.speechHelper_numberOfLevels.Location = new System.Drawing.Point(3, 435);
+            this.speechHelper_numberOfLevels.Name = "speechHelper_numberOfLevels";
+            this.speechHelper_numberOfLevels.Size = new System.Drawing.Size(1266, 34);
+            this.speechHelper_numberOfLevels.TabIndex = 43;
+            this.speechHelper_numberOfLevels.Text = "Speech Helper: say \"number of levels is\" and 5, 10 or 15 after.\r\n(e.g: \"Number of" +
+    " levels is fifteen\")\r\n";
+            this.speechHelper_numberOfLevels.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.speechHelper_numberOfLevels.Visible = false;
+            // 
+            // speechHelper_playerName
+            // 
+            this.speechHelper_playerName.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.speechHelper_playerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.speechHelper_playerName.Location = new System.Drawing.Point(3, 278);
+            this.speechHelper_playerName.Name = "speechHelper_playerName";
+            this.speechHelper_playerName.Size = new System.Drawing.Size(1266, 34);
+            this.speechHelper_playerName.TabIndex = 42;
+            this.speechHelper_playerName.Text = "Speech Helper: say \"player name is\" and your desired player name after.\r\n(e.g: \"P" +
+    "layer name is Peter\")\r\n";
+            this.speechHelper_playerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.speechHelper_playerName.Visible = false;
+            // 
             // enterName_radioBtn1
             // 
             this.enterName_radioBtn1.AutoSize = true;
             this.enterName_radioBtn1.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enterName_radioBtn1.ForeColor = System.Drawing.Color.White;
-            this.enterName_radioBtn1.Location = new System.Drawing.Point(545, 431);
+            this.enterName_radioBtn1.Location = new System.Drawing.Point(545, 401);
             this.enterName_radioBtn1.Name = "enterName_radioBtn1";
             this.enterName_radioBtn1.Size = new System.Drawing.Size(41, 31);
             this.enterName_radioBtn1.TabIndex = 26;
@@ -438,7 +469,7 @@ namespace trabalho03_indes_v2
             this.enterName_radioBtn3.AutoSize = true;
             this.enterName_radioBtn3.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enterName_radioBtn3.ForeColor = System.Drawing.Color.White;
-            this.enterName_radioBtn3.Location = new System.Drawing.Point(690, 431);
+            this.enterName_radioBtn3.Location = new System.Drawing.Point(690, 401);
             this.enterName_radioBtn3.Name = "enterName_radioBtn3";
             this.enterName_radioBtn3.Size = new System.Drawing.Size(48, 31);
             this.enterName_radioBtn3.TabIndex = 25;
@@ -451,7 +482,7 @@ namespace trabalho03_indes_v2
             this.enterName_radioBtn2.Checked = true;
             this.enterName_radioBtn2.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enterName_radioBtn2.ForeColor = System.Drawing.Color.White;
-            this.enterName_radioBtn2.Location = new System.Drawing.Point(616, 431);
+            this.enterName_radioBtn2.Location = new System.Drawing.Point(616, 401);
             this.enterName_radioBtn2.Name = "enterName_radioBtn2";
             this.enterName_radioBtn2.Size = new System.Drawing.Size(50, 31);
             this.enterName_radioBtn2.TabIndex = 24;
@@ -463,7 +494,7 @@ namespace trabalho03_indes_v2
             // 
             this.enterName_levelsLabel.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enterName_levelsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-            this.enterName_levelsLabel.Location = new System.Drawing.Point(469, 373);
+            this.enterName_levelsLabel.Location = new System.Drawing.Point(469, 343);
             this.enterName_levelsLabel.Name = "enterName_levelsLabel";
             this.enterName_levelsLabel.Size = new System.Drawing.Size(330, 33);
             this.enterName_levelsLabel.TabIndex = 23;
@@ -473,7 +504,7 @@ namespace trabalho03_indes_v2
             // enterName_input
             // 
             this.enterName_input.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enterName_input.Location = new System.Drawing.Point(469, 278);
+            this.enterName_input.Location = new System.Drawing.Point(469, 238);
             this.enterName_input.MinimumSize = new System.Drawing.Size(4, 27);
             this.enterName_input.Name = "enterName_input";
             this.enterName_input.Size = new System.Drawing.Size(330, 27);
@@ -483,7 +514,7 @@ namespace trabalho03_indes_v2
             // 
             this.enterName_nameLabel.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enterName_nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-            this.enterName_nameLabel.Location = new System.Drawing.Point(469, 222);
+            this.enterName_nameLabel.Location = new System.Drawing.Point(469, 192);
             this.enterName_nameLabel.Name = "enterName_nameLabel";
             this.enterName_nameLabel.Size = new System.Drawing.Size(330, 33);
             this.enterName_nameLabel.TabIndex = 21;
@@ -543,6 +574,7 @@ namespace trabalho03_indes_v2
             // play
             // 
             this.play.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(36)))), ((int)(((byte)(68)))));
+            this.play.Controls.Add(this.speechHelper_letter);
             this.play.Controls.Add(this.play_useBoosterBtn);
             this.play.Controls.Add(this.play_changeWordBtn);
             this.play.Controls.Add(this.play_changeThemeBtn);
@@ -588,6 +620,18 @@ namespace trabalho03_indes_v2
             this.play.Size = new System.Drawing.Size(1481, 793);
             this.play.TabIndex = 4;
             this.play.Text = "play";
+            // 
+            // speechHelper_letter
+            // 
+            this.speechHelper_letter.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.speechHelper_letter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.speechHelper_letter.Location = new System.Drawing.Point(196, 610);
+            this.speechHelper_letter.Name = "speechHelper_letter";
+            this.speechHelper_letter.Size = new System.Drawing.Size(454, 21);
+            this.speechHelper_letter.TabIndex = 40;
+            this.speechHelper_letter.Text = "Speech Helper: say \"Letter X\" or simply \"X\" to use letter X.\r\n";
+            this.speechHelper_letter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.speechHelper_letter.Visible = false;
             // 
             // play_useBoosterBtn
             // 
@@ -1523,6 +1567,9 @@ namespace trabalho03_indes_v2
         private System.Windows.Forms.Button enterName_backBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button welcome_speechBtn;
+        private System.Windows.Forms.Label speechHelper_numberOfLevels;
+        private System.Windows.Forms.Label speechHelper_playerName;
+        private System.Windows.Forms.Label speechHelper_letter;
     }
 }
 

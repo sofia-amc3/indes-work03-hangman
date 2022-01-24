@@ -130,6 +130,9 @@ namespace trabalho03_indes_v2
                 speechRecognizer.RecognizeAsync(RecognizeMode.Multiple);
                 speechRecognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(speechRec);
                 showSaidWords.Visible = true;
+                speechHelper_letter.Visible = true;
+                speechHelper_numberOfLevels.Visible = true;
+                speechHelper_playerName.Visible = true;
             } else
             {
                 welcome_speechBtn.ForeColor = Color.White;
@@ -138,6 +141,9 @@ namespace trabalho03_indes_v2
 
                 speechRecognizer.RecognizeAsyncStop();
                 showSaidWords.Visible = false;
+                speechHelper_letter.Visible = false;
+                speechHelper_numberOfLevels.Visible = false;
+                speechHelper_playerName.Visible = false;
             }
         }
 
@@ -977,7 +983,7 @@ namespace trabalho03_indes_v2
                 for (int i = 0; i < alphabet.Length; i++) 
                 {
                     Button btn = (Button) play.Controls.Find("letter" + alphabet[i].ToUpper() + "Btn", true).First();
-                    if (saidWords == alphabet[i])
+                    if (saidWords == alphabet[i] || saidWords == "letter " + alphabet[i])
                     {
                         if (btn.Enabled) letterBtn_Click(btn, result);
                     }
