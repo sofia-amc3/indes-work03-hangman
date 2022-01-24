@@ -76,24 +76,9 @@ namespace trabalho03_indes_v2
             {
                 // Get top five players' data
                 string json = File.ReadAllText(playerListPath);
-                playerList = SortList(JsonConvert.DeserializeObject<List<Player>>(json));
+                playerList = JsonConvert.DeserializeObject<List<Player>>(json);
             }
             else Debug.WriteLine("Players.json doesn't exist");
-        }
-
-        // Para remover #############
-        private List<Player> SortList(List<Player> x)
-        {
-            List<Player> sortedPlayerList = new List<Player>();
-
-            //Sort the playerList for player with the 
-            IEnumerable<Player> query = x.OrderBy(player => player.score);
-
-            //Add to new list
-            foreach (Player player in query)
-                sortedPlayerList.Add(player);
-
-            return sortedPlayerList;
         }
 
         //Sort by score
@@ -260,6 +245,7 @@ namespace trabalho03_indes_v2
                 UpdateScore();
                 revealedLetters.Add(letter);
                 int counter = 0;
+                
                 // Guessed a letter - reveal the letters from the word
                 foreach (string wordLetter in devidedWord)
                 {
@@ -527,6 +513,9 @@ namespace trabalho03_indes_v2
 
             if (currentLevel > totalLevels)
             {
+                playerList[playerList.Count - 1].score = score;
+                playerList.Sort(SortByScore);
+                SaveUserData();
                 DisplayHighScores();
                 menu.SelectedIndex = 5;
             }
