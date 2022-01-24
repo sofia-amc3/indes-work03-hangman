@@ -578,11 +578,11 @@ namespace trabalho03_indes_v2
             this.play.Controls.Add(this.letterEBtn);
             this.play.Controls.Add(this.letterWBtn);
             this.play.Controls.Add(this.letterQBtn);
-            this.play.Controls.Add(this.play_hangman);
             this.play.Controls.Add(this.play_word);
             this.play.Controls.Add(this.label1);
             this.play.Controls.Add(this.play_currentLevel);
             this.play.Controls.Add(this.play_letterDashes);
+            this.play.Controls.Add(this.play_hangman);
             this.play.Location = new System.Drawing.Point(4, 24);
             this.play.Name = "play";
             this.play.Size = new System.Drawing.Size(1481, 793);

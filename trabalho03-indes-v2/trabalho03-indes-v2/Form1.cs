@@ -39,11 +39,11 @@ namespace trabalho03_indes_v2
         bool speechActivated = false;
         SpeechRecognitionEngine speechRecognizer;
         TextBox showSaidWords;
+        Label levelResult;
 
-        // Color for gray out buttons
-        Color backgroundOriginal = Color.FromArgb(255, 17, 36, 68);
-        Color backgroundUsed = Color.FromArgb(150, 17, 36, 68);
-        Color foregroundUsed = Color.FromArgb(150, 255, 255, 255);
+        // Colors for buttons
+        Color originalBgColor = Color.FromArgb(255, 17, 36, 68);
+        Color usedColor = Color.Black; // Color.FromArgb(255, 57, 95, 141);
 
         public hangman()
         {
@@ -186,26 +186,38 @@ namespace trabalho03_indes_v2
             {
                 // Reset Power Ups
                 Button btn = (Button)this.Controls.Find("play_useBoosterBtn", true).First();
-
                 btn.Enabled = true;
-                btn.BackColor = backgroundOriginal;
+                btn.BackColor = originalBgColor;
                 btn.ForeColor = Color.White;
+                btn.FlatAppearance.BorderColor = Color.White;
 
                 btn = (Button)this.Controls.Find("play_changeThemeBtn", true).First();
-
                 btn.Enabled = true;
-                btn.BackColor = backgroundOriginal;
-                btn.ForeColor = Color.White;
-
+                btn.BackColor = originalBgColor;
+                btn.ForeColor = Color.White; 
+                btn.FlatAppearance.BorderColor = Color.White;
+                
                 btn = (Button)this.Controls.Find("play_changeWordBtn", true).First();
-
                 btn.Enabled = true;
-                btn.BackColor = backgroundOriginal;
+                btn.BackColor = originalBgColor;
+                btn.FlatAppearance.BorderColor = Color.White;
                 btn.ForeColor = Color.White;
 
                 // Reset game score and current level
                 score = 0;
                 currentLevel = 1;
+
+                // Creates "You Win/You Lose" Label
+                levelResult = new Label();
+                levelResult.Location = new Point(196, 274);
+                levelResult.Name = "play_levelResult";
+                levelResult.ForeColor = Color.White;
+                levelResult.BackColor = Color.FromArgb(255, 97, 153, 215);
+                levelResult.Font = new Font("Montserrat Semibold", 18);
+                levelResult.TextAlign = ContentAlignment.MiddleCenter;
+                levelResult.Size = new Size(454, 115);
+                levelResult.Visible = false;
+                play.Controls.Add(levelResult);
 
                 // Goes to Play Area
                 displayGame();
@@ -234,8 +246,8 @@ namespace trabalho03_indes_v2
                 clickedButtons.Add(btn);
 
                 btn.Enabled = false;
-                btn.BackColor = backgroundUsed;
-                btn.ForeColor = foregroundUsed;
+                btn.ForeColor = usedColor;
+                btn.FlatAppearance.BorderColor = usedColor;
 
                 RegisterLetter(btn.Text.ToLower());
             }
@@ -248,8 +260,8 @@ namespace trabalho03_indes_v2
             clickedButtons.Add(btn);
 
             btn.Enabled = false;
-            btn.BackColor = backgroundUsed;
-            btn.ForeColor = foregroundUsed;
+            btn.ForeColor = usedColor;
+            btn.FlatAppearance.BorderColor = usedColor;
 
             RegisterLetter(btn.Text.ToLower());
         }
@@ -373,7 +385,9 @@ namespace trabalho03_indes_v2
                 UpdateScore();
 
                 await Task.Delay(2000);
-                ShowWinPopUp();
+                play_hangman.Visible = false;
+                levelResult.Text = "You Win!";
+                levelResult.Visible = true;
 
                 await Task.Delay(3000);
 
@@ -391,12 +405,14 @@ namespace trabalho03_indes_v2
                 score = score - 50;
                 UpdateScore();
 
-                await Task.Delay(2000);
+                await Task.Delay(1000);
                 // Show the full word
                 RevealWord();
 
                 await Task.Delay(2000);
-                ShowLosePopUp();
+                play_hangman.Visible = false;
+                levelResult.Text = "You Lose.";
+                levelResult.Visible = true;
 
                 await Task.Delay(3000);
 
@@ -406,23 +422,14 @@ namespace trabalho03_indes_v2
             }
         }
 
-        private void ShowWinPopUp()
-        {
-
-        }
-
-        private void ShowLosePopUp()
-        {
-
-        }
-
         private void ResetButtons()
         {
             foreach (Button btn in clickedButtons)
             {
                 btn.Enabled = true;
                 btn.ForeColor = Color.White;
-                btn.BackColor = backgroundOriginal;
+                btn.BackColor = originalBgColor;
+                btn.FlatAppearance.BorderColor = Color.White;
             }
         }
 
@@ -524,6 +531,12 @@ namespace trabalho03_indes_v2
 
             // Reset round score
             roundScore = 0;
+
+            // Clear "You Win/You Lose" Label
+            levelResult.Visible = false;
+
+            // Image of hangman is visible
+            play_hangman.Visible = true;
 
             play_currentLevel.Text = "Level " + currentLevel + "/" + totalLevels;
             UpdateScore();
@@ -894,8 +907,8 @@ namespace trabalho03_indes_v2
                 Button btn = sender as Button;
 
                 btn.Enabled = false;
-                btn.BackColor = backgroundUsed;
-                btn.ForeColor = foregroundUsed;
+                btn.ForeColor = usedColor;
+                btn.FlatAppearance.BorderColor = usedColor;
 
                 ResetRoundScore();
                 displayGame("", chosenWord.theme);
@@ -909,8 +922,8 @@ namespace trabalho03_indes_v2
                 Button btn = sender as Button;
 
                 btn.Enabled = false;
-                btn.BackColor = backgroundUsed;
-                btn.ForeColor = foregroundUsed;
+                btn.ForeColor = usedColor;
+                btn.FlatAppearance.BorderColor = usedColor;
 
                 ResetRoundScore();
                 displayGame(chosenWord.theme);
@@ -924,14 +937,14 @@ namespace trabalho03_indes_v2
                 Button btn = sender as Button;
 
                 btn.Enabled = false;
-                btn.BackColor = backgroundUsed;
-                btn.ForeColor = foregroundUsed;
+                btn.ForeColor = usedColor;
+                btn.FlatAppearance.BorderColor = usedColor;
 
                 FetchRandomLetterFromWord();
             }
         }
 
-        // Speech Recognizer Function
+        // Speech Recognizer Function ---------------------------------------------------------------------------------------------------------------------
         private void speechRec(object sender, SpeechRecognizedEventArgs result)
         {
             String saidWords = result.Result.Text.ToLower();
