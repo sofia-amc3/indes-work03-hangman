@@ -559,49 +559,45 @@ namespace trabalho03_indes_v2
             {
                 //Generate word for 5 levels
                 if (totalLevels == 5)
-                { // if player chose 5 levels 
-                    //Check if current level
-                    if (currentLevel < 3) // if 2 or less pick from the easy difficulty
-                        EasyWordRnd(themeFilterInclude, themeFilterExclude);
-
-                    //Check if current level is 3 or 4
-                    if (currentLevel >= 3 && currentLevel < 5)
+                { // if player chose 5 levels
+                    //Check if current level is 1
+                    if (currentLevel <= 1)
                         AverageWordRnd(themeFilterInclude, themeFilterExclude);
 
-                    //Check if current level is 5
-                    if (currentLevel == 5)
+                    //Check if current level is 2, 3, 4 or 5
+                    if (currentLevel >= 2)
                         DifficultWordRnd(themeFilterInclude, themeFilterExclude);
                 }
 
                 //Generate word for 10 levels
                 if (totalLevels == 10)
                 { // if player chose 10 levels 
-                    //Check if current level
-                    if (currentLevel < 5) // if 4 or less pick from the easy difficulty
+                    //Check if current level is 1, 2, 3 or 4
+                    if (currentLevel <= 4) 
                         EasyWordRnd(themeFilterInclude, themeFilterExclude);
 
-                    //Check if current level is 5 or higher, but less then 9
-                    if (currentLevel >= 5 && currentLevel < 9)
+                    //Check if current level is 5, 6 or 7
+                    if (currentLevel > 4 && currentLevel < 8)
                         AverageWordRnd(themeFilterInclude, themeFilterExclude);
 
-                    //Check if current level is 9 or higher
-                    if (currentLevel >= 9)
+                    //Check if current level is 8, 9 or 10
+                    if (currentLevel >= 8)
                         DifficultWordRnd(themeFilterInclude, themeFilterExclude);
                 }
 
                 //Generate word for 15 levels
                 if (totalLevels == 15)
                 { // if player chose 15 levels 
-                    //Check if current level
-                    if (currentLevel < 6) // if 5 or less pick from the easy difficulty
+                    //Check if current level is 1, 2, 3, 4, 5, 6 or 7
+                    if (currentLevel < 8) 
                         EasyWordRnd(themeFilterInclude, themeFilterExclude);
 
-                    //Check if current level is 6 or higher, but less then 11
-                    if (currentLevel >= 6 && currentLevel < 11)
+                    //Check if current level is 8, 9, 10, 11, 12 or 13
+                    if (currentLevel >= 8 && currentLevel < 14)
                         AverageWordRnd(themeFilterInclude, themeFilterExclude);
 
-                    //Check if current level is 11 or higher
-                    if (currentLevel >= 11)
+                    //Check if current level is 14 or 15
+                    if (currentLevel >= 14)
                         DifficultWordRnd(themeFilterInclude, themeFilterExclude);
                 }
             }
