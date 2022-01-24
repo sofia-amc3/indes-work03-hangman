@@ -956,7 +956,25 @@ namespace trabalho03_indes_v2
                 if (saidWords == "play") enterName_playBtn_Click(sender, result);
                 if (saidWords == "back") enterName_backBtn_Click(sender, result);
             }
+            if(menu.SelectedIndex == 4) // Play Screen
+            {
+                String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+                                    "r", "s", "t", "u", "v", "w", "x", "y", "z"};
 
+                for (int i = 0; i < alphabet.Length; i++) 
+                {
+                    Button btn = (Button) play.Controls.Find("letter" + alphabet[i].ToUpper() + "Btn", true).First();
+                    if (saidWords == alphabet[i])
+                    {
+                        if (btn.Enabled) letterBtn_Click(btn, result);
+                    }
+                    if (saidWords == "change theme") play_changeThemeBtn_Click(btn, result);
+                    if (saidWords == "change word") play_changeWordBtn_Click(btn, result);
+                    if (saidWords == "use booster") play_useBoosterBtn_Click(btn, result);
+                }
+                if (saidWords == "quit game" || saidWords == "quit" || saidWords == "quit the game") play_quitBtn_Click(sender, result);
+            }
+            if (menu.SelectedIndex == 5) if (saidWords == "back") highScores_backBtn_Click(sender, result); // High Scores Screen
         }
     }
 }
