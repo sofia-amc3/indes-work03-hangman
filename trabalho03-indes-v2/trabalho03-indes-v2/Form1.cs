@@ -981,9 +981,9 @@ namespace trabalho03_indes_v2
                     {
                         if (btn.Enabled) letterBtn_Click(btn, result);
                     }
-                    if (saidWords == "change theme") play_changeThemeBtn_Click(btn, result);
-                    if (saidWords == "change word") play_changeWordBtn_Click(btn, result);
-                    if (saidWords == "use booster") play_useBoosterBtn_Click(btn, result);
+                    if (saidWords == "change theme" || saidWords == "change the theme") play_changeThemeBtn_Click(btn, result);
+                    if (saidWords == "change word" || saidWords == "change the word") play_changeWordBtn_Click(btn, result);
+                    if (saidWords == "use booster" || saidWords == "booster") play_useBoosterBtn_Click(btn, result);
                 }
                 if (saidWords == "quit game" || saidWords == "quit" || saidWords == "quit the game") play_quitBtn_Click(sender, result);
             }

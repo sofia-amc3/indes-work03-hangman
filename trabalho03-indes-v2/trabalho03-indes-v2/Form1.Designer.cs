@@ -98,11 +98,11 @@ namespace trabalho03_indes_v2
             this.letterEBtn = new System.Windows.Forms.Button();
             this.letterWBtn = new System.Windows.Forms.Button();
             this.letterQBtn = new System.Windows.Forms.Button();
-            this.play_hangman = new System.Windows.Forms.PictureBox();
             this.play_word = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.play_currentLevel = new System.Windows.Forms.Label();
             this.play_letterDashes = new System.Windows.Forms.Label();
+            this.play_hangman = new System.Windows.Forms.PictureBox();
             this.highScores = new System.Windows.Forms.TabPage();
             this.highScore_player5Score = new System.Windows.Forms.Label();
             this.highScore_player4Score = new System.Windows.Forms.Label();
@@ -396,9 +396,9 @@ namespace trabalho03_indes_v2
             // 
             this.rules_img.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rules_img.BackgroundImage")));
             this.rules_img.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rules_img.Location = new System.Drawing.Point(3, 3);
+            this.rules_img.Location = new System.Drawing.Point(3, 0);
             this.rules_img.Name = "rules_img";
-            this.rules_img.Size = new System.Drawing.Size(1265, 642);
+            this.rules_img.Size = new System.Drawing.Size(1269, 711);
             this.rules_img.TabIndex = 0;
             this.rules_img.TabStop = false;
             // 
@@ -1096,16 +1096,6 @@ namespace trabalho03_indes_v2
             this.letterQBtn.UseVisualStyleBackColor = true;
             this.letterQBtn.Click += new System.EventHandler(this.letterBtn_Click);
             // 
-            // play_hangman
-            // 
-            this.play_hangman.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("play_hangman.BackgroundImage")));
-            this.play_hangman.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.play_hangman.Location = new System.Drawing.Point(345, 245);
-            this.play_hangman.Name = "play_hangman";
-            this.play_hangman.Size = new System.Drawing.Size(151, 180);
-            this.play_hangman.TabIndex = 4;
-            this.play_hangman.TabStop = false;
-            // 
             // play_word
             // 
             this.play_word.BackColor = System.Drawing.Color.Transparent;
@@ -1155,6 +1145,16 @@ namespace trabalho03_indes_v2
             this.play_letterDashes.Text = "_ _ _ _ _ _ _ _";
             this.play_letterDashes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.play_letterDashes.Visible = false;
+            // 
+            // play_hangman
+            // 
+            this.play_hangman.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("play_hangman.BackgroundImage")));
+            this.play_hangman.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.play_hangman.Location = new System.Drawing.Point(345, 245);
+            this.play_hangman.Name = "play_hangman";
+            this.play_hangman.Size = new System.Drawing.Size(151, 180);
+            this.play_hangman.TabIndex = 4;
+            this.play_hangman.TabStop = false;
             // 
             // highScores
             // 
