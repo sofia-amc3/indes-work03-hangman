@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace trabalho03_indes_v2
 {
@@ -43,7 +46,7 @@ namespace trabalho03_indes_v2
 
             InitializeComponent();
 
-           /* wordListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\HangManWords.json");
+            wordListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\HangManWords.json");
             Debug.WriteLine(wordListPath);
 
             // Check if file exists
@@ -66,7 +69,7 @@ namespace trabalho03_indes_v2
                 string json = File.ReadAllText(playerListPath);
                 playerList = SortList(JsonConvert.DeserializeObject<List<Player>>(json));
             }
-            else Debug.WriteLine("Players.json doesn't exist");*/
+            else Debug.WriteLine("Players.json doesn't exist");
         }
 
         // Para remover #############
