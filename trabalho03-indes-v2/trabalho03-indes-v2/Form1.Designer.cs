@@ -174,8 +174,8 @@ namespace trabalho03_indes_v2
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(471, 624);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+            this.label2.Location = new System.Drawing.Point(457, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(180, 28);
             this.label2.TabIndex = 8;
@@ -191,7 +191,7 @@ namespace trabalho03_indes_v2
             this.welcome_speechBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.welcome_speechBtn.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome_speechBtn.ForeColor = System.Drawing.Color.White;
-            this.welcome_speechBtn.Location = new System.Drawing.Point(657, 624);
+            this.welcome_speechBtn.Location = new System.Drawing.Point(643, 26);
             this.welcome_speechBtn.Name = "welcome_speechBtn";
             this.welcome_speechBtn.Size = new System.Drawing.Size(64, 28);
             this.welcome_speechBtn.TabIndex = 7;
@@ -326,7 +326,7 @@ namespace trabalho03_indes_v2
             this.credits_backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.credits_backBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.credits_backBtn.ForeColor = System.Drawing.Color.White;
-            this.credits_backBtn.Location = new System.Drawing.Point(568, 589);
+            this.credits_backBtn.Location = new System.Drawing.Point(562, 570);
             this.credits_backBtn.Name = "credits_backBtn";
             this.credits_backBtn.Size = new System.Drawing.Size(156, 56);
             this.credits_backBtn.TabIndex = 11;
@@ -384,7 +384,7 @@ namespace trabalho03_indes_v2
             this.rules_backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rules_backBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rules_backBtn.ForeColor = System.Drawing.Color.White;
-            this.rules_backBtn.Location = new System.Drawing.Point(568, 589);
+            this.rules_backBtn.Location = new System.Drawing.Point(562, 570);
             this.rules_backBtn.Name = "rules_backBtn";
             this.rules_backBtn.Size = new System.Drawing.Size(156, 56);
             this.rules_backBtn.TabIndex = 7;
@@ -497,7 +497,7 @@ namespace trabalho03_indes_v2
             this.enterName_playBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enterName_playBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enterName_playBtn.ForeColor = System.Drawing.Color.White;
-            this.enterName_playBtn.Location = new System.Drawing.Point(632, 586);
+            this.enterName_playBtn.Location = new System.Drawing.Point(643, 570);
             this.enterName_playBtn.Name = "enterName_playBtn";
             this.enterName_playBtn.Size = new System.Drawing.Size(156, 56);
             this.enterName_playBtn.TabIndex = 20;
@@ -532,7 +532,7 @@ namespace trabalho03_indes_v2
             this.enterName_backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enterName_backBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enterName_backBtn.ForeColor = System.Drawing.Color.White;
-            this.enterName_backBtn.Location = new System.Drawing.Point(459, 586);
+            this.enterName_backBtn.Location = new System.Drawing.Point(470, 570);
             this.enterName_backBtn.Name = "enterName_backBtn";
             this.enterName_backBtn.Size = new System.Drawing.Size(156, 56);
             this.enterName_backBtn.TabIndex = 17;
@@ -1390,7 +1390,7 @@ namespace trabalho03_indes_v2
             this.highScores_backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.highScores_backBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.highScores_backBtn.ForeColor = System.Drawing.Color.White;
-            this.highScores_backBtn.Location = new System.Drawing.Point(566, 582);
+            this.highScores_backBtn.Location = new System.Drawing.Point(562, 570);
             this.highScores_backBtn.Name = "highScores_backBtn";
             this.highScores_backBtn.Size = new System.Drawing.Size(156, 56);
             this.highScores_backBtn.TabIndex = 14;

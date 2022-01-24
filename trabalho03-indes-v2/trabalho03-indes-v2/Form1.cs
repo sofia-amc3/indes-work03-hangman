@@ -38,6 +38,7 @@ namespace trabalho03_indes_v2
         int roundScore = 0;
         bool speechActivated = false;
         SpeechRecognitionEngine speechRecognizer;
+        TextBox showSaidWords;
 
         // Color for gray out buttons
         Color backgroundOriginal = Color.FromArgb(255, 17, 36, 68);
@@ -51,9 +52,24 @@ namespace trabalho03_indes_v2
 
             InitializeComponent();
 
+            // Load Speech Recognition
             speechRecognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-001"));
             speechRecognizer.SetInputToDefaultAudioDevice();
             speechRecognizer.LoadGrammar(new DictationGrammar());
+
+            // Create text box to show what is being said by the user
+            showSaidWords = new TextBox();
+            showSaidWords.Location = new Point(16, 655);
+            showSaidWords.Name = "speechRecognizerTextBox";
+            showSaidWords.ForeColor = Color.FromArgb(255, 146, 168, 192);
+            showSaidWords.BackColor = Color.FromArgb(255, 17, 36, 68);
+            showSaidWords.BorderStyle = BorderStyle.None;
+            showSaidWords.TextAlign = HorizontalAlignment.Center;
+            showSaidWords.Font = new Font("Montserrat", 9);
+            showSaidWords.MinimumSize = new Size(0, 25);
+            showSaidWords.Size = new Size(1280, 25);
+            showSaidWords.Text = "Speech Recognizer: ";
+            showSaidWords.Visible = false;
 
             wordListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\HangManWords.json");
             Debug.WriteLine(wordListPath);
@@ -63,10 +79,8 @@ namespace trabalho03_indes_v2
             {
                 string json = File.ReadAllText(wordListPath);
                 wordList = JsonConvert.DeserializeObject<List<Item>>(json);
-
-                Debug.WriteLine("File exists");
             }
-            else Debug.WriteLine("File doesn't exist");
+            else Debug.WriteLine("HangManWords.json doesn't exist");
 
             // Player list url
             playerListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\Players.json");
@@ -115,11 +129,15 @@ namespace trabalho03_indes_v2
 
                 speechRecognizer.RecognizeAsync(RecognizeMode.Multiple);
                 speechRecognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(speechRec);
+                showSaidWords.Visible = true;
             } else
             {
                 welcome_speechBtn.ForeColor = Color.White;
                 welcome_speechBtn.BackColor = Color.FromArgb(17, 36, 68);
                 welcome_speechBtn.Text = "OFF";
+
+                speechRecognizer.RecognizeAsyncStop();
+                showSaidWords.Visible = false;
             }
         }
 
@@ -343,7 +361,6 @@ namespace trabalho03_indes_v2
             }
 
             // After changing the image, check if the player has lost.
-
             CheckIfLost();
         }
 
@@ -917,27 +934,29 @@ namespace trabalho03_indes_v2
         // Speech Recognizer Function
         private void speechRec(object sender, SpeechRecognizedEventArgs result)
         {
-            String saidSentence = result.Result.Text.ToLower();
+            String saidWords = result.Result.Text.ToLower();
 
-            Debug.WriteLine(saidSentence); // ######### change this to appear in a dialog where the user can see what he is saying
+            showSaidWords.Text = "Speech Recognizer: " + saidWords;
+            menu.SelectedTab.Controls.Add(showSaidWords);
 
             if (menu.SelectedIndex == 0) // Welcome Screen
             {
-                if (saidSentence == "play") welcome_playBtn_Click(sender, result);
-                else if (saidSentence == "credits") welcome_creditsBtn_Click(sender, result);
-                else if (saidSentence == "rules") welcome_rulesBtn_Click(sender, result);
+                if (saidWords == "play") welcome_playBtn_Click(sender, result);
+                if (saidWords == "credits") welcome_creditsBtn_Click(sender, result);
+                if (saidWords == "rules") welcome_rulesBtn_Click(sender, result);
             }
-            if (menu.SelectedIndex == 1) if (saidSentence == "back") credits_backBtn_Click(sender, result); // Credits Screen
-            if (menu.SelectedIndex == 2) if (saidSentence == "back") rules_backBtn_Click(sender, result); // Rules Screen
+            if (menu.SelectedIndex == 1) if (saidWords == "back") credits_backBtn_Click(sender, result); // Credits Screen
+            if (menu.SelectedIndex == 2) if (saidWords == "back") rules_backBtn_Click(sender, result); // Rules Screen
             if (menu.SelectedIndex == 3) // Enter Name Screen
             {
-                if (saidSentence.Contains("player name is")) enterName_input.Text = saidSentence.Split(' ').LastOrDefault();
-                if (saidSentence == "number of levels is five" || saidSentence == "number of levels is 5") enterName_radioBtn1.Checked = true;
-                if (saidSentence == "number of levels is ten" || saidSentence == "number of levels is 10") enterName_radioBtn2.Checked = true;
-                if (saidSentence == "number of levels is fifteen" || saidSentence == "number of levels is 15") enterName_radioBtn3.Checked = true;
-                if (saidSentence == "play") enterName_playBtn_Click(sender, result);
-                if (saidSentence == "back") enterName_backBtn_Click(sender, result);
+                if (saidWords.Contains("player name is")) enterName_input.Text = saidWords.Split(' ').LastOrDefault();
+                if (saidWords == "number of levels is five" || saidWords == "number of levels is 5") enterName_radioBtn1.Checked = true;
+                if (saidWords == "number of levels is ten" || saidWords == "number of levels is 10") enterName_radioBtn2.Checked = true;
+                if (saidWords == "number of levels is fifteen" || saidWords == "number of levels is 15") enterName_radioBtn3.Checked = true;
+                if (saidWords == "play") enterName_playBtn_Click(sender, result);
+                if (saidWords == "back") enterName_backBtn_Click(sender, result);
             }
+
         }
     }
 }
