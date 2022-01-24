@@ -51,7 +51,7 @@ namespace trabalho03_indes_v2
 
             InitializeComponent();
 
-            speechRecognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US"));
+            speechRecognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-001"));
             speechRecognizer.SetInputToDefaultAudioDevice();
             speechRecognizer.LoadGrammar(new DictationGrammar());
 
