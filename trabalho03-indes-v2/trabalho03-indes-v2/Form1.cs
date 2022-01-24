@@ -7,9 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// JSON Dependencies
 using System.IO;
 using System.Diagnostics;
 using Newtonsoft.Json;
+// Speech Dependencies
+using System.Speech.Recognition;
 
 namespace trabalho03_indes_v2
 {
@@ -33,6 +36,8 @@ namespace trabalho03_indes_v2
         int numLettersDiscovered = 0;
         int hangmanStage = 0;
         int roundScore = 0;
+        bool speechActivated = false;
+        SpeechRecognitionEngine speechRecognizer;
 
         // Color for gray out buttons
         Color backgroundOriginal = Color.FromArgb(255, 17, 36, 68);
@@ -45,6 +50,10 @@ namespace trabalho03_indes_v2
             playerList = new List<Player>();
 
             InitializeComponent();
+
+            speechRecognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US"));
+            speechRecognizer.SetInputToDefaultAudioDevice();
+            speechRecognizer.LoadGrammar(new DictationGrammar());
 
             wordListPath = Path.Combine(Environment.CurrentDirectory, @"jsonFiles\HangManWords.json");
             Debug.WriteLine(wordListPath);
@@ -87,7 +96,6 @@ namespace trabalho03_indes_v2
             return sortedPlayerList;
         }
 
-
         //Sort by score
         static int SortByScore(Player p1, Player p2)
         {
@@ -108,6 +116,26 @@ namespace trabalho03_indes_v2
         private void welcome_playBtn_Click(object sender, EventArgs e)
         {
             menu.SelectedIndex = 3;
+        }
+
+        private void welcome_speechBtn_Click(object sender, EventArgs e)
+        {
+            speechActivated = !speechActivated;
+
+            if(speechActivated)
+            {
+                welcome_speechBtn.ForeColor = Color.FromArgb(17, 36, 68);
+                welcome_speechBtn.BackColor = Color.White;
+                welcome_speechBtn.Text = "ON";
+
+                speechRecognizer.RecognizeAsync(RecognizeMode.Multiple);
+                speechRecognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(speechRec);
+            } else
+            {
+                welcome_speechBtn.ForeColor = Color.White;
+                welcome_speechBtn.BackColor = Color.FromArgb(17, 36, 68);
+                welcome_speechBtn.Text = "OFF";
+            }
         }
 
         // Rules Screen ----------------------------------------------------------------------------------------------------------------------------------------
@@ -150,7 +178,7 @@ namespace trabalho03_indes_v2
             else if (enterName_radioBtn3.Checked) { totalLevels = 15; check++; }
             else MessageBox.Show("No number of levels was selected. Please select your total number of levels.", "No Levels Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            //Only goe to next page if all the verefications are made
+            //Only goes to the next page if all the verifications are made
             if (check == 2)
             {
                 // Reset Power Ups
@@ -894,6 +922,32 @@ namespace trabalho03_indes_v2
                 btn.ForeColor = foregroundUsed;
 
                 FetchRandomLetterFromWord();
+            }
+        }
+
+        // Speech Recognizer Function
+        private void speechRec(object sender, SpeechRecognizedEventArgs result)
+        {
+            String saidSentence = result.Result.Text.ToLower();
+
+            Debug.WriteLine(saidSentence); // ######### change this to appear in a dialog where the user can see what he is saying
+
+            if (menu.SelectedIndex == 0) // Welcome Screen
+            {
+                if (saidSentence == "play") welcome_playBtn_Click(sender, result);
+                else if (saidSentence == "credits") welcome_creditsBtn_Click(sender, result);
+                else if (saidSentence == "rules") welcome_rulesBtn_Click(sender, result);
+            }
+            if (menu.SelectedIndex == 1) if (saidSentence == "back") credits_backBtn_Click(sender, result); // Credits Screen
+            if (menu.SelectedIndex == 2) if (saidSentence == "back") rules_backBtn_Click(sender, result); // Rules Screen
+            if (menu.SelectedIndex == 3) // Enter Name Screen
+            {
+                if (saidSentence.Contains("player name is")) enterName_input.Text = saidSentence.Split(' ').LastOrDefault();
+                if (saidSentence == "number of levels is five" || saidSentence == "number of levels is 5") enterName_radioBtn1.Checked = true;
+                if (saidSentence == "number of levels is ten" || saidSentence == "number of levels is 10") enterName_radioBtn2.Checked = true;
+                if (saidSentence == "number of levels is fifteen" || saidSentence == "number of levels is 15") enterName_radioBtn3.Checked = true;
+                if (saidSentence == "play") enterName_playBtn_Click(sender, result);
+                if (saidSentence == "back") enterName_backBtn_Click(sender, result);
             }
         }
     }

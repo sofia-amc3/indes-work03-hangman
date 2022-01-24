@@ -32,6 +32,8 @@ namespace trabalho03_indes_v2
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(hangman));
             this.menu = new System.Windows.Forms.TabControl();
             this.welcome = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.welcome_speechBtn = new System.Windows.Forms.Button();
             this.welcome_creditsBtn = new System.Windows.Forms.Button();
             this.welcome_rulesBtn = new System.Windows.Forms.Button();
             this.welcome_playBtn = new System.Windows.Forms.Button();
@@ -154,6 +156,8 @@ namespace trabalho03_indes_v2
             // welcome
             // 
             this.welcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(36)))), ((int)(((byte)(68)))));
+            this.welcome.Controls.Add(this.label2);
+            this.welcome.Controls.Add(this.welcome_speechBtn);
             this.welcome.Controls.Add(this.welcome_creditsBtn);
             this.welcome.Controls.Add(this.welcome_rulesBtn);
             this.welcome.Controls.Add(this.welcome_playBtn);
@@ -167,6 +171,34 @@ namespace trabalho03_indes_v2
             this.welcome.TabIndex = 0;
             this.welcome.Text = "welcome";
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.label2.Location = new System.Drawing.Point(471, 624);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 28);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Speech Recognition:\r\n";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // welcome_speechBtn
+            // 
+            this.welcome_speechBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(36)))), ((int)(((byte)(68)))));
+            this.welcome_speechBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.welcome_speechBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.welcome_speechBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.welcome_speechBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.welcome_speechBtn.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcome_speechBtn.ForeColor = System.Drawing.Color.White;
+            this.welcome_speechBtn.Location = new System.Drawing.Point(657, 624);
+            this.welcome_speechBtn.Name = "welcome_speechBtn";
+            this.welcome_speechBtn.Size = new System.Drawing.Size(64, 28);
+            this.welcome_speechBtn.TabIndex = 7;
+            this.welcome_speechBtn.Text = "OFF";
+            this.welcome_speechBtn.UseVisualStyleBackColor = false;
+            this.welcome_speechBtn.Click += new System.EventHandler(this.welcome_speechBtn_Click);
+            // 
             // welcome_creditsBtn
             // 
             this.welcome_creditsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -174,7 +206,7 @@ namespace trabalho03_indes_v2
             this.welcome_creditsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.welcome_creditsBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome_creditsBtn.ForeColor = System.Drawing.Color.White;
-            this.welcome_creditsBtn.Location = new System.Drawing.Point(344, 439);
+            this.welcome_creditsBtn.Location = new System.Drawing.Point(345, 438);
             this.welcome_creditsBtn.Name = "welcome_creditsBtn";
             this.welcome_creditsBtn.Size = new System.Drawing.Size(156, 56);
             this.welcome_creditsBtn.TabIndex = 6;
@@ -189,7 +221,7 @@ namespace trabalho03_indes_v2
             this.welcome_rulesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.welcome_rulesBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome_rulesBtn.ForeColor = System.Drawing.Color.White;
-            this.welcome_rulesBtn.Location = new System.Drawing.Point(521, 439);
+            this.welcome_rulesBtn.Location = new System.Drawing.Point(522, 438);
             this.welcome_rulesBtn.Name = "welcome_rulesBtn";
             this.welcome_rulesBtn.Size = new System.Drawing.Size(156, 56);
             this.welcome_rulesBtn.TabIndex = 5;
@@ -204,7 +236,7 @@ namespace trabalho03_indes_v2
             this.welcome_playBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.welcome_playBtn.Font = new System.Drawing.Font("Montserrat Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome_playBtn.ForeColor = System.Drawing.Color.White;
-            this.welcome_playBtn.Location = new System.Drawing.Point(698, 439);
+            this.welcome_playBtn.Location = new System.Drawing.Point(699, 438);
             this.welcome_playBtn.Name = "welcome_playBtn";
             this.welcome_playBtn.Size = new System.Drawing.Size(156, 56);
             this.welcome_playBtn.TabIndex = 4;
@@ -216,7 +248,7 @@ namespace trabalho03_indes_v2
             // 
             this.welcome_question.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome_question.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
-            this.welcome_question.Location = new System.Drawing.Point(510, 320);
+            this.welcome_question.Location = new System.Drawing.Point(511, 319);
             this.welcome_question.Name = "welcome_question";
             this.welcome_question.Size = new System.Drawing.Size(279, 61);
             this.welcome_question.TabIndex = 3;
@@ -227,7 +259,7 @@ namespace trabalho03_indes_v2
             this.welcome_gameSubtitle.AutoSize = true;
             this.welcome_gameSubtitle.Font = new System.Drawing.Font("Montserrat Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome_gameSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-            this.welcome_gameSubtitle.Location = new System.Drawing.Point(510, 270);
+            this.welcome_gameSubtitle.Location = new System.Drawing.Point(511, 269);
             this.welcome_gameSubtitle.Name = "welcome_gameSubtitle";
             this.welcome_gameSubtitle.Size = new System.Drawing.Size(182, 26);
             this.welcome_gameSubtitle.TabIndex = 2;
@@ -238,7 +270,7 @@ namespace trabalho03_indes_v2
             this.welcome_gameTitle.AutoSize = true;
             this.welcome_gameTitle.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome_gameTitle.ForeColor = System.Drawing.Color.White;
-            this.welcome_gameTitle.Location = new System.Drawing.Point(502, 185);
+            this.welcome_gameTitle.Location = new System.Drawing.Point(503, 184);
             this.welcome_gameTitle.Name = "welcome_gameTitle";
             this.welcome_gameTitle.Size = new System.Drawing.Size(302, 66);
             this.welcome_gameTitle.TabIndex = 1;
@@ -248,7 +280,7 @@ namespace trabalho03_indes_v2
             // 
             this.welcome_gameLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("welcome_gameLogo.BackgroundImage")));
             this.welcome_gameLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.welcome_gameLogo.Location = new System.Drawing.Point(402, 203);
+            this.welcome_gameLogo.Location = new System.Drawing.Point(403, 202);
             this.welcome_gameLogo.Name = "welcome_gameLogo";
             this.welcome_gameLogo.Size = new System.Drawing.Size(79, 168);
             this.welcome_gameLogo.TabIndex = 0;
@@ -1489,6 +1521,8 @@ namespace trabalho03_indes_v2
         private System.Windows.Forms.Label enterName_title;
         private System.Windows.Forms.PictureBox enterName_gameLogo;
         private System.Windows.Forms.Button enterName_backBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button welcome_speechBtn;
     }
 }
 
