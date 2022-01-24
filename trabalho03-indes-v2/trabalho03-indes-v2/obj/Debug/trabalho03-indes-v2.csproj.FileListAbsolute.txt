@@ -1,0 +1,13 @@
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\bin\Debug\trabalho03-indes-v2.exe.config
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\bin\Debug\trabalho03-indes-v2.exe
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\bin\Debug\trabalho03-indes-v2.pdb
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\bin\Debug\Newtonsoft.Json.dll
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\bin\Debug\Newtonsoft.Json.xml
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\obj\Debug\trabalho03-indes-v2.csprojAssemblyReference.cache
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\obj\Debug\trabalho03_indes_v2.hangman.resources
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\obj\Debug\trabalho03_indes_v2.Properties.Resources.resources
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\obj\Debug\trabalho03-indes-v2.csproj.GenerateResource.cache
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\obj\Debug\trabalho03-indes-v2.csproj.CoreCompileInputs.cache
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\obj\Debug\trabalho03-indes-v2.csproj.CopyComplete
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\obj\Debug\trabalho03-indes-v2.exe
+D:\01. Work\01. University - ISEP (MEI)\02. 1st Year\01. Interfaces e Design\04. Trabalho 03\trabalho03-indes\trabalho03-indes-v2\trabalho03-indes-v2\obj\Debug\trabalho03-indes-v2.pdb

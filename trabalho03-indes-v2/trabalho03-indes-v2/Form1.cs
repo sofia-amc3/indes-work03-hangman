@@ -304,27 +304,27 @@ namespace trabalho03_indes_v2
             switch (hangmanStage)
             {
                 case 1:
-                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-02.png", true);
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\images\hangman-02.png", true);
                     break;
 
                 case 2:
-                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-03.png", true);
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\images\hangman-03.png", true);
                     break;
 
                 case 3:
-                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-04.png", true);
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\images\hangman-04.png", true);
                     break;
 
                 case 4:
-                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-05.png", true);
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\images\hangman-05.png", true);
                     break;
 
                 case 5:
-                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-06.png", true);
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\images\hangman-06.png", true);
                     break;
 
                 case 6:
-                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-07.png", true);
+                    play_hangman.BackgroundImage = Image.FromFile(@"..\..\images\hangman-07.png", true);
                     break;
             }
 
@@ -481,7 +481,7 @@ namespace trabalho03_indes_v2
             hangmanStage = 0;
 
             // Reset hangman image
-            play_hangman.BackgroundImage = Image.FromFile(@"..\..\..\images\hangman-01.png", true);
+            play_hangman.BackgroundImage = Image.FromFile(@"..\..\images\hangman-01.png", true);
 
             // Reset letters guessed
             revealedLetters.Clear();
