@@ -441,7 +441,7 @@ namespace trabalho03_indes_v2
 
         private void UpdateScore()
         {
-            play.Text = score.ToString();
+            play_score.Text = score.ToString();
         }
 
         private void RevealWord()
