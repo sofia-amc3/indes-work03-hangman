@@ -392,13 +392,12 @@ namespace trabalho03_indes_v2
             // The player WINS when numDiscoveredLetters = devidedWord.Count
             if (numLettersDiscovered == devidedWord.Count)
             {
-                score = score + 50;
-                UpdateScore();
-
                 await Task.Delay(2000);
                 play_hangman.Visible = false;
                 levelResult.Text = "You Win!";
                 levelResult.Visible = true;
+                score = score + 50;
+                UpdateScore();
 
                 await Task.Delay(3000);
 
@@ -413,9 +412,6 @@ namespace trabalho03_indes_v2
             // The player LOSES when hangmanStage = 6 (full image)
             if (hangmanStage == 6)
             {
-                score = score - 50;
-                UpdateScore();
-
                 await Task.Delay(1000);
                 // Show the full word
                 RevealWord();
@@ -424,6 +420,8 @@ namespace trabalho03_indes_v2
                 play_hangman.Visible = false;
                 levelResult.Text = "You Lose.";
                 levelResult.Visible = true;
+                score = score - 50;
+                UpdateScore();
 
                 await Task.Delay(3000);
 
