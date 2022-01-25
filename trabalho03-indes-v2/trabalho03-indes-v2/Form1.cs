@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 // JSON Dependencies
 using System.IO;
 using System.Diagnostics;
 using Newtonsoft.Json;
+
 // Speech Dependencies
 using System.Speech.Recognition;
 
@@ -53,7 +55,7 @@ namespace trabalho03_indes_v2
             InitializeComponent();
 
             // Load Speech Recognition
-            speechRecognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-001"));
+            speechRecognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US"));
             speechRecognizer.SetInputToDefaultAudioDevice();
             speechRecognizer.LoadGrammar(new DictationGrammar());
 
@@ -98,7 +100,10 @@ namespace trabalho03_indes_v2
         //Sort by score
         static int SortByScore(Player p1, Player p2)
         {
-            return p1.score.CompareTo(p2.score);
+            Debug.WriteLine(p1.score);
+            Debug.WriteLine(p2.score);
+            Debug.WriteLine(p1.score.CompareTo(p2.score));
+            return (p1.score.CompareTo(p2.score))*(-1);
         }
 
         // Welcome Screen --------------------------------------------------------------------------------------------------------------------------------------
@@ -549,8 +554,11 @@ namespace trabalho03_indes_v2
 
             if (currentLevel > totalLevels)
             {
+
                 playerList[playerList.Count - 1].score = score;
                 playerList.Sort(SortByScore);
+                
+
                 SaveUserData();
                 DisplayHighScores();
                 menu.SelectedIndex = 5;
@@ -866,9 +874,15 @@ namespace trabalho03_indes_v2
             //Update
             Label[] topPlayers = new Label[] { highScore_player1, highScore_player2, highScore_player3, highScore_player4, highScore_player5 };
             Label[] topScores = new Label[] { highScore_player1Score, highScore_player2Score, highScore_player3Score, highScore_player4Score, highScore_player5Score };
+            List<Player> scoreList = new List<Player>();
 
             //Sort list by player score
             playerList.Sort(SortByScore);
+
+            foreach (var item in playerList)
+            {
+                Debug.WriteLine(item.name + " " + item.score.ToString());
+            }
 
             //Check if list count is not bigger then 5
             if (playerList.Count > 5)
@@ -881,8 +895,8 @@ namespace trabalho03_indes_v2
             // Set labels text
             for (int i = 0; i < playerList.Count; i++)
             {
-                topPlayers[i].Text = playerList[(playerList.Count - 1) - i].name;
-                topScores[i].Text = playerList[(playerList.Count - 1) - i].score.ToString() + " points";
+                topPlayers[i].Text = playerList[i].name;
+                topScores[i].Text = playerList[i].score.ToString() + " points";
             }
         }
 
