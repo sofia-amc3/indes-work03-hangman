@@ -308,7 +308,7 @@ namespace trabalho03_indes_v2
                             wordSpace.Width = 50;
                             wordSpace.Height = 70;
                             wordSpace.TextAlign = ContentAlignment.MiddleCenter;
-                            wordSpace.Location = new Point(pos, 160);
+                            wordSpace.Location = new Point(pos, 128);
                             wordSpace.Font = new Font("Montserrat", 39);
                             play.Controls.Add(wordSpace);
                             wordSpace.BringToFront();
@@ -327,7 +327,7 @@ namespace trabalho03_indes_v2
                             wordSpace.Width = 50;
                             wordSpace.Height = 70;
                             wordSpace.TextAlign = ContentAlignment.MiddleCenter;
-                            wordSpace.Location = new Point(pos, 160);
+                            wordSpace.Location = new Point(pos, 128);
                             wordSpace.Font = new Font("Montserrat", 39);
                             play.Controls.Add(wordSpace);
                             wordSpace.BringToFront();
@@ -468,7 +468,7 @@ namespace trabalho03_indes_v2
                         wordSpace.Width = 50;
                         wordSpace.Height = 70;
                         wordSpace.TextAlign = ContentAlignment.MiddleCenter;
-                        wordSpace.Location = new Point(pos, 160);
+                        wordSpace.Location = new Point(pos, 128);
                         wordSpace.Font = new Font("Montserrat", 39);
                         play.Controls.Add(wordSpace);
                         wordSpace.BringToFront();
@@ -487,7 +487,7 @@ namespace trabalho03_indes_v2
                         wordSpace.Width = 50;
                         wordSpace.Height = 70;
                         wordSpace.TextAlign = ContentAlignment.MiddleCenter;
-                        wordSpace.Location = new Point(pos, 160);
+                        wordSpace.Location = new Point(pos, 128);
                         wordSpace.Font = new Font("Montserrat", 39);
                         play.Controls.Add(wordSpace);
                         wordSpace.BringToFront();
@@ -762,7 +762,7 @@ namespace trabalho03_indes_v2
                 blankSpace.ForeColor = Color.White;
                 blankSpace.AutoSize = true;
                 blankSpace.TextAlign = ContentAlignment.MiddleCenter;
-                blankSpace.Location = new Point(368, 174);
+                blankSpace.Location = new Point(368, 142);
                 blankSpace.Font = new Font("Montserrat", 43);
                 play.Controls.Add(blankSpace);
 
@@ -779,7 +779,7 @@ namespace trabalho03_indes_v2
                     blankSpace3.ForeColor = Color.White;
                     blankSpace3.AutoSize = true;
                     blankSpace3.TextAlign = ContentAlignment.MiddleCenter;
-                    blankSpace3.Location = new Point(pos, 174);
+                    blankSpace3.Location = new Point(pos, 142);
                     blankSpace3.Font = new Font("Montserrat", 43);
                     play.Controls.Add(blankSpace3);
 
@@ -792,7 +792,7 @@ namespace trabalho03_indes_v2
                 blankSpace2.ForeColor = Color.White;
                 blankSpace2.AutoSize = true;
                 blankSpace2.TextAlign = ContentAlignment.MiddleCenter;
-                blankSpace2.Location = new Point(418, 174);
+                blankSpace2.Location = new Point(418, 142);
                 blankSpace2.Font = new Font("Montserrat", 43);
                 play.Controls.Add(blankSpace2);
 
@@ -809,7 +809,7 @@ namespace trabalho03_indes_v2
                     blankSpace3.ForeColor = Color.White;
                     blankSpace3.AutoSize = true;
                     blankSpace3.TextAlign = ContentAlignment.MiddleCenter;
-                    blankSpace3.Location = new Point(pos2, 174);
+                    blankSpace3.Location = new Point(pos2, 142);
                     blankSpace3.Font = new Font("Montserrat", 43);
                     play.Controls.Add(blankSpace3);
 
@@ -824,7 +824,7 @@ namespace trabalho03_indes_v2
                 blankSpace.ForeColor = Color.White;
                 blankSpace.AutoSize = true;
                 blankSpace.TextAlign = ContentAlignment.MiddleCenter;
-                blankSpace.Location = new Point(393, 174);
+                blankSpace.Location = new Point(393, 142);
                 blankSpace.Font = new Font("Montserrat", 43);
                 play.Controls.Add(blankSpace);
 
@@ -841,7 +841,7 @@ namespace trabalho03_indes_v2
                     blankSpace2.ForeColor = Color.White;
                     blankSpace2.AutoSize = true;
                     blankSpace2.TextAlign = ContentAlignment.MiddleCenter;
-                    blankSpace2.Location = new Point(pos, 174);
+                    blankSpace2.Location = new Point(pos, 142);
                     blankSpace2.Font = new Font("Montserrat", 43);
                     play.Controls.Add(blankSpace2);
 
@@ -859,7 +859,7 @@ namespace trabalho03_indes_v2
                     blankSpace2.ForeColor = Color.White;
                     blankSpace2.AutoSize = true;
                     blankSpace2.TextAlign = ContentAlignment.MiddleCenter;
-                    blankSpace2.Location = new Point(pos2, 174);
+                    blankSpace2.Location = new Point(pos2, 142);
                     blankSpace2.Font = new Font("Montserrat", 43);
                     play.Controls.Add(blankSpace2);
 
