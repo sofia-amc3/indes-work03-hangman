@@ -995,11 +995,25 @@ namespace trabalho03_indes_v2
                     {
                         if (btn.Enabled) letterBtn_Click(btn, result);
                     }
-                    if (saidWords == "change theme" || saidWords == "change the theme") play_changeThemeBtn_Click(btn, result);
-                    if (saidWords == "change word" || saidWords == "change the word") play_changeWordBtn_Click(btn, result);
-                    if (saidWords == "use booster" || saidWords == "booster") play_useBoosterBtn_Click(btn, result);
                 }
-                if (saidWords == "quit game" || saidWords == "quit" || saidWords == "quit the game") play_quitBtn_Click(sender, result);
+                if (saidWords == "change theme" || saidWords == "change the theme" || saidWords == "theme" || saidWords == "changed theme")
+                {
+                    Button btn = (Button)play.Controls.Find("play_changeThemeBtn", true).First();
+                    play_changeThemeBtn_Click(btn, result);
+                }
+                if (saidWords == "change word" || saidWords == "change the word" ||
+                    saidWords == "word" || saidWords == "changed word" ||
+                    saidWords == "changed words" || saidWords == "change words")
+                {
+                    Button btn = (Button)play.Controls.Find("play_changeWordBtn", true).First();
+                    play_changeWordBtn_Click(btn, result);
+                }
+                if (saidWords == "use booster" || saidWords == "booster" || saidWords == "help")
+                {
+                    Button btn = (Button)play.Controls.Find("play_useBoosterBtn", true).First();
+                    play_useBoosterBtn_Click(btn, result);
+                }
+                if (saidWords == "quit game" || saidWords == "quit" || saidWords == "quit the game" || saidWords == "give up") play_quitBtn_Click(sender, result);
             }
             if (menu.SelectedIndex == 5) if (saidWords == "back") highScores_backBtn_Click(sender, result); // High Scores Screen
         }
