@@ -994,6 +994,53 @@ namespace trabalho03_indes_v2
                     if (saidWords == alphabet[i] || saidWords == "letter " + alphabet[i])
                     {
                         if (btn.Enabled) letterBtn_Click(btn, result);
+                    } 
+                    // Case: Letter O
+                    if(alphabet[i] == "o" && 
+                    (saidWords == alphabet[i] || saidWords == "letter " + alphabet[i] ||
+                    saidWords == "oh" || saidWords == "letter oh" ||
+                    saidWords == "bowl" || saidWords == "letter bowl" ||
+                    saidWords == "all" || saidWords == "letter all"))
+                    {
+                        if (btn.Enabled) letterBtn_Click(btn, result);
+                    }
+                    // Case: Letter U
+                    if (alphabet[i] == "u" &&
+                    (saidWords == alphabet[i] || saidWords == "letter " + alphabet[i] ||
+                    saidWords == "you" || saidWords == "letter you" || saidWords == "you'll" || saidWords == "letter you'll" ||
+                    saidWords == "you're" || saidWords == "letter you're"))
+                    {
+                        if (btn.Enabled) letterBtn_Click(btn, result);
+                    }
+                    // Case: Letter B
+                    if (alphabet[i] == "b" &&
+                    (saidWords == alphabet[i] || saidWords == "letter " + alphabet[i] ||
+                    saidWords == "be" || saidWords == "letter be"))
+                    {
+                        if (btn.Enabled) letterBtn_Click(btn, result);
+                    }
+                    // Case: Letter H
+                    if (alphabet[i] == "h" &&
+                    (saidWords == alphabet[i] || saidWords == "letter " + alphabet[i] ||
+                    saidWords == "eight" || saidWords == "letter eight" ||
+                    saidWords == "eights" || saidWords == "letter eights"))
+                    {
+                        if (btn.Enabled) letterBtn_Click(btn, result);
+                    }
+                    // Case: Letter J
+                    if (alphabet[i] == "j" &&
+                    (saidWords == alphabet[i] || saidWords == "letter " + alphabet[i] ||
+                    saidWords == "they" || saidWords == "letter they" ||
+                    saidWords == "day" || saidWords == "letter day"))
+                    {
+                        if (btn.Enabled) letterBtn_Click(btn, result);
+                    }
+                    // Case: Letter Q
+                    if (alphabet[i] == "q" &&
+                    (saidWords == alphabet[i] || saidWords == "letter " + alphabet[i] ||
+                    saidWords == "do" || saidWords == "letter do"))
+                    {
+                        if (btn.Enabled) letterBtn_Click(btn, result);
                     }
                 }
                 if (saidWords == "change theme" || saidWords == "change the theme" || saidWords == "theme" || saidWords == "changed theme")
@@ -1013,7 +1060,7 @@ namespace trabalho03_indes_v2
                     Button btn = (Button)play.Controls.Find("play_useBoosterBtn", true).First();
                     play_useBoosterBtn_Click(btn, result);
                 }
-                if (saidWords == "quit game" || saidWords == "quit" || saidWords == "quit the game" || saidWords == "give up") play_quitBtn_Click(sender, result);
+                if (saidWords == "quit game" || saidWords == "quit" || saidWords == "quit the game" || saidWords == "give up" || saidWords == "quits") play_quitBtn_Click(sender, result);
             }
             if (menu.SelectedIndex == 5) if (saidWords == "back") highScores_backBtn_Click(sender, result); // High Scores Screen
         }
